@@ -1,27 +1,128 @@
 {% extends "navbar.html" %}
-{%block title%}Home {%endblock title %}
-{%block body%}
+{% block title %}Home {% endblock title %}
+{% block body %}
 
 <main>
     <article>
         <section class="section hero" aria-label="home">
             <div class="container">
-    
-              <h1 class="h1 hero-title">
-                <strong class="strong">Guiding You</strong> Through Your First Steps In Coding
-              </h1>
+                <h1 class="h1 hero-title">
+                    <strong class="strong">Guiding You</strong> Through Your First Steps In Coding
+                </h1>
             </div>
-          </section>
-       
-      <section class="section featured" aria-label="featured post">
-        <div class="container">
+        </section>
 
-          <p class="section-subtitle">
-            Get started with our <strong class="strong">best stories</strong>
-          </p>
-        </div>
-      </section>
+        <section class="section beg" aria-label="beg post">
+            <div class="container">
+                <div class="channel-card frontend section-subtitle" onclick="openModal('frontendModal')">
+                    Hey <strong class="strong">Beigneer</strong> start with this 
+                    <i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
+                </div>
+
+                <div id="frontendModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeModal('frontendModal')">&times;</span>
+                        <h1><i class="fas fa-laptop-code section-icon"></i> Frontend Development Overview</h1>
+                        <!-- Rest of your modal content -->
+                        <div class="section">
+                            <h2><i class="fas fa-info-circle section-icon"></i> What is Frontend Development?</h2>
+                            <p>Frontend development, also known as client-side development, is the practice of producing HTML, CSS,
+                                and JavaScript for a website or web application so that a user can see and interact with them
+                                directly. The challenge associated with frontend development is that the tools and techniques used
+                                to create the frontend of a website change constantly, and so the developer needs to constantly be
+                                aware of how the field is developing.</p>
+                        </div>
+                        <div class="section">
+                          <h2><i class="fas fa-code section-icon"></i> Basic Languages and Technologies:</h2>
+          
+                          <h3><i class="fab fa-html5 section-icon"></i> HTML (HyperText Markup Language)</h3>
+                          <p><span class="key-point">Purpose:</span> HTML is the backbone of any website development process,
+                              without which a web page does not exist. HTML is a markup language that defines the structure of
+                              your content.</p>
+                          <p><span class="key-point">Example:</span> Think of HTML as the skeleton of a webpage. It helps in
+                              defining where the header, body, and footer of the page are located.</p>
+          
+                          <h3><i class="fab fa-css3-alt section-icon"></i> CSS (Cascading Style Sheets)</h3>
+                          <p><span class="key-point">Purpose:</span> While HTML structures your content, CSS is what makes your
+                              website look good. CSS is a design language intended to simplify the process of making web pages
+                              presentable.</p>
+                          <p><span class="key-point">Example:</span> CSS is used to apply styles to HTML elements. For instance,
+                              you can use CSS to change the color, font, and layout of your web pages. It’s what makes your
+                              content visually appealing and adaptable to different devices.</p>
+          
+                          <h3><i class="fab fa-js section-icon"></i> JavaScript</h3>
+                          <p><span class="key-point">Purpose:</span> JavaScript is a programming language used to create dynamic
+                              content that can interact with users. If HTML is the skeleton and CSS is the skin, JavaScript is the
+                              muscles.</p>
+                          <p><span class="key-point">Example:</span> Use JavaScript to create things like interactive maps,
+                              animated graphics, and responsive forms. For instance, when you fill out a form online and get
+                              instant feedback (like checking if your email is valid), that’s JavaScript in action.</p>
+                      </div>
+          
+                      <div class="section">
+                          <h2><i class="fas fa-lightbulb section-icon"></i> Pre-requisite Knowledge:</h2>
+                          <ul>
+                              <li><strong>Basic Web Concepts:</strong> Understanding of how the web works, including concepts like
+                                  HTTP, browsers, and web servers.</li>
+                              <li><strong>Version Control:</strong> Familiarity with version control systems (e.g., Git) to track
+                                  changes and collaborate with others.</li>
+                              <li><strong>Programming Basics:</strong> Basic knowledge of programming concepts (variables, loops,
+                                  conditionals) which are essential to write efficient code.</li>
+                          </ul>
+                      </div>
+          
+                      <div class="section">
+                          <h2><i class="fas fa-cogs section-icon"></i> How Frontend Development Works:</h2>
+                          <h3><i class="fas fa-sitemap section-icon"></i> Structure with HTML</h3>
+                          <p>HTML uses tags and attributes to organize the content on the webpage. Tags are the building blocks,
+                              and attributes provide additional information about elements.</p>
+                          <p><span class="key-point">Example:</span> <code>&lt;h1&gt;</code> tag for headings,
+                              <code>&lt;p&gt;</code> tag for paragraphs, <code>&lt;a&gt;</code> tag for links.
+                          </p>
+          
+                          <h3><i class="fas fa-paint-brush section-icon"></i> Style with CSS</h3>
+                          <p>CSS provides style rules that define how HTML elements are displayed. It includes layout, color,
+                              fonts, and overall visual effects.</p>
+                          <p><span class="key-point">Example:</span> <code>color: red;</code> to make text red,
+                              <code>margin: 10px;</code> to create space around elements.
+                          </p>
+          
+                          <h3><i class="fas fa-magic section-icon"></i> Interactivity with JavaScript</h3>
+                          <p>JavaScript enables dynamic content and interactive elements on the webpage. It can manipulate HTML
+                              and CSS to update the UI, control multimedia, animate images, etc.</p>
+                          <p><span class="key-point">Example:</span>
+                              <code>document.getElementById("myElement").innerHTML = "Hello World!";</code> changes the content of
+                              an HTML element with the ID <code>myElement</code>.
+                          </p>
+          
+                          <h3><i class="fas fa-mobile-alt section-icon"></i> Responsive Design</h3>
+                          <p>Ensuring that your web pages look good on all devices, from desktops to tablets to smartphones. This
+                              is often achieved through media queries and flexible grid layouts in CSS.</p>
+                          <p><span class="key-point">Example:</span> Using a CSS media query to apply different styles for screen
+                              widths below 600px, ensuring a mobile-friendly design.</p>
+                      </div>
+          
+                      <div class="section">
+                          <h2><i class="fas fa-thumbs-up section-icon"></i> Conclusion</h2>
+                          <p>Frontend development is essential for creating the visual and interactive aspects of a website. By
+                              mastering HTML, CSS, and JavaScript, you can build beautiful, functional, and user-friendly web
+                              interfaces. This not only enhances user experience but also contributes to the overall success of a
+                              web project.</p>
+                      </div>
+                        <!-- Other sections -->
+                        <div class="button-container">
+                            <p>If you're eager to dive deeper into frontend development and connect with fellow learners and
+                                experienced developers, consider signing up and joining our community server. In our server, you can
+                                chat with experts, get answers to your questions, and share your progress. It's a fantastic
+                                opportunity to learn, collaborate, and grow in the world of frontend development.</p>
+                            <a href="/login" class="btn">Go to Channels</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </article>
 </main>
+<script src="/static/js'script.js"></script>
 
 {% endblock body %}
