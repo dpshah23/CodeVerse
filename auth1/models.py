@@ -25,7 +25,7 @@ tech=(
     
 )
 
-class Users_main (models.Model):
+class Users_main(models.Model):
     name = models.CharField(max_length=100)
     username=models.CharField(max_length=100,unique=True)
     email = models.EmailField(max_length=100)

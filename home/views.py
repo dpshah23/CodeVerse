@@ -1,7 +1,9 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from datetime import datetime
-from .models import clg_info
+from .models import *
+from auth1.models import Users_main
+import random
 
 # Create your views here.
 def home(request):
@@ -25,6 +27,21 @@ def clg_info(request):
         
 def quiz (request):
     try:
-    except:
-        pass
-    return render(request,"quiz.html")
+        email = request.session['email']
+        level =  Users_main.objects.get(email=email).level
+        questions = Quiz.objects.filter(level=level)
+        question1=[]
+        final=[]
+        
+        for question in range(5):
+            
+            nq=random.choices(questions)
+            if nq not in question1:
+                final.append(nq)
+                
+        print(final)
+                
+
+    except Exception as e:
+        print(e)
+    return HttpResponse("hrllo")

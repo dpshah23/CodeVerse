@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 
 from django.contrib import messages
 
-from .models import Users
+from .models import Users_main
 from django.http import HttpResponse
 
 # Create your views here.
@@ -13,7 +13,7 @@ def login(request):
         password=request.POST.get('password')
 
         try:
-            user=Users.objects.get(email=email)
+            user=Users_main.objects.get(email=email)
 
             if not user.isactive:
                 messages.error(request,"Some Unusual Activity Happend in your account . So We have Blocked Your Account")
@@ -32,7 +32,7 @@ def login(request):
             else:
                 messages.error(request,"Incorrect Password ....")
                 return redirect('/auth/login')
-        except Users.DoesNotExist:
+        except Users_main.DoesNotExist:
             messages.error(request,"User Does Not Exist..")
             return render(request,"login.html")
         
@@ -40,7 +40,7 @@ def login(request):
 
 def check_user(request,username):
     try:
-        user=Users.objects.get(username=username)
+        user=Users_main.objects.get(username=username)
         return HttpResponse({"success":False})
-    except Users.DoesNotExist:
+    except Users_main.DoesNotExist:
         return HttpResponse({"success":True})
