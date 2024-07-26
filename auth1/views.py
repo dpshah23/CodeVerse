@@ -186,3 +186,72 @@ def generate_avatar_base64(email, size=128):
     img_str = base64.b64encode(buffer.getvalue()).decode('utf-8')
     return img_str
 
+
+
+@ratelimit(key='ip', rate='10/m')
+def reset_pass(request):
+    if request.method == "GET":
+        email = request.GET.get('email')
+        key = request.GET.get('key')
+        # print(f"Received email: {email}, key: {key}")  # Debugging
+
+        try:
+            user_reset = resetpass.objects.get(email=email, keys=key)
+            # print(f"Reset entry found: {user_reset}")  # Debugging
+
+            if user_reset.usage:
+                messages.error(request,"Link Is Already Used")
+                return redirect('/auth/login')
+            elif user_reset.is_expired():
+                print("Invalid Link: Link is Expired")  # Debugging
+                messages.error(request, 'Link is expired')
+                return redirect('/auth/login')
+            
+        except resetpass.DoesNotExist:
+            print(f"No reset entry found for email: {email} and key: {key}")  # Debugging
+            messages.error(request, 'Invalid reset link or Link Already Used')
+            return redirect('/auth/login')
+
+    elif request.method == "POST":
+        new_pass = request.POST.get('password')
+        email = request.POST.get('email')
+        key=request.POST.get('key')
+        # print(f"New password received for email {email}: {new_pass}")  # Debugging
+
+        try:
+            user = Users_main.objects.get(email=email)
+            # print(f"User found: {user}")  # Debugging
+            user_reset = resetpass.objects.get(email=email, keys=key)
+            # Generate a new encryption key and encrypt the new password
+            
+
+            # Update user's password and key
+            user.set_password(new_pass)
+    
+            user.save()
+
+            # Mark the reset pass entry as used
+            user_reset.usage = True
+            user_reset.save()
+
+            user_reset.delete()
+
+            return redirect('/auth/login')
+        
+        except resetpass.DoesNotExist:
+            # print(f"Reset entry not found for email: {email}")  # Debugging
+            messages.error(request, 'Invalid reset link')
+            return render(request, 'Reset_Password.html')
+        
+        except Users_main.DoesNotExist:
+            # print(f"User with email {email} does not exist.")  # Debugging
+            messages.error(request, 'User does not exist')
+            return render(request, 'Reset_Password.html', {'email': email})
+        
+        except Exception as e:
+            # print(f"Error resetting password: {str(e)}")  # Debugging
+            messages.error(request, 'Error resetting password. Please try again.')
+            return render(request, 'Reset_Password.html', {'email': email})
+
+    return render(request, 'Reset_Password.html')
+
