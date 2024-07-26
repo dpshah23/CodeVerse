@@ -12,7 +12,7 @@ class Visit(models.Model):
 
 class Users (models.Model):
     name = models.CharField(max_length=100)
-    username=models.CharField(max_length=100,blank=True,unique=True)
+    username=models.CharField(max_length=100,unique=True)
     email = models.EmailField(max_length=100)
     password = models.CharField(max_length=100)
     user_id = models.CharField(max_length=50)
