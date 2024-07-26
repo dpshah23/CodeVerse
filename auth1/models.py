@@ -7,16 +7,31 @@ class Visit(models.Model):
     page_visited = models.CharField(max_length=255, unique=True)
     visit_count = models.PositiveIntegerField(default=0)
 
-    def __str__(self):
+    def _str_(self):
         return f"{self.page_visited} - {self.visit_count}"
 
-class Users (models.Model):
+levels=(
+    ("BEGINNER","begineer"),
+    ("INTERMEDIATE","intermediate"),
+    ("EXPERT","expert"),
+)
+tech=(
+    ("FRONTEND","frontend"),
+    ("BACKEND","backend"),
+    ("MOBILEAPP","mobileapp"),
+    ("DATA SCIENCE","datascience"),
+    ("ARTIFICIAL INTELLIGENCE/MACHINE LEARNING","ai/ml"),
+    ("GAME DEVELOPMENT","gamedev")
+    
+)
+
+class Users_main (models.Model):
     name = models.CharField(max_length=100)
-    username=models.CharField(max_length=100,blank=True,unique=True)
+    username=models.CharField(max_length=100,unique=True)
     email = models.EmailField(max_length=100)
     password = models.CharField(max_length=100)
     user_id = models.CharField(max_length=50)
-    phone = models.IntegerField()
+    phone = models.CharField(max_length=100)
     city = models.CharField(max_length=50)
     qualication = models.CharField(max_length=100)
     profile_pic = models.TextField()
@@ -25,9 +40,11 @@ class Users (models.Model):
     desciption = models.TextField()
     time_stamp = models.DateField()
     is_active = models.BooleanField(default=True)
+    level = models.CharField(max_length=50,choices=levels,blank=True)
+    tech=models.CharField(max_length=150,choices=tech,blank=True)
     
     
-    def __str__(self):
+    def _str_(self):
         return self.name
     
     def set_password(self, raw_password):

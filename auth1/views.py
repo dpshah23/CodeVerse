@@ -3,7 +3,7 @@ from django.shortcuts import render,redirect
 from django.contrib import messages
 
 from .models import Users
-
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -37,3 +37,10 @@ def login(request):
             return render(request,"login.html")
         
     return render(request,"login.html")
+
+def check_user(request,username):
+    try:
+        user=Users.objects.get(username=username)
+        return HttpResponse({"success":False})
+    except Users.DoesNotExist:
+        return HttpResponse({"success":True})
