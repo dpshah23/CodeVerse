@@ -72,11 +72,11 @@ def signup( request):
         obj = Users_main(username = username , email=email ,user_id = user_id  , name = None , phone = None , city = None , qualification =None , profile_pic = profile_pic , dob = None , bio = None , description = None , time_stamp = time_stamp , is_active = False , level = None , tech = None)
         obj.set_password(password)
         obj.save()
-        return redirect('/more_info/<user_id>/')
+        return redirect('user_details/<user_id>/')
 
     return render (request , 'login.html')
 
-def more_info(request , user_id):
+def user_details(request , user_id):
     if request.method == "POST":
         pass
 
