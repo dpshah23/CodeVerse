@@ -2,3 +2,5 @@ django
 channels[daphne]
 django-ratelimit
 python-dotenv
+mysqlclient
+django-jazzmin
