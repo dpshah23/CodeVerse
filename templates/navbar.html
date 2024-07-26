@@ -1,25 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Code Verse</title>
-    <link href="/static/css/navbar.css" rel="stylesheet" />
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Inconsolata:wght@200..900&display=swap");
-    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <!-- 
+      - primary meta tags
+    -->
+    <title> {% block title %}{% endblock title %} |Blogy - Hey, we're Blogy. See our thoughts, stories and ideas.</title>
+    <meta name="title" content="Blogy - Hey, we' re Blogy. See our thoughts, stories and ideas.">
+    <meta name="description" content="This is a blog html template made by codewithsadee">
+  
+    <!-- 
+      - favicon
+    -->
+    <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml">
+  
+    <!-- 
+      - custom css link
+    -->
+    <link rel="stylesheet" href="/static/css/navbar.css">
+  
+    <!-- 
+      - google font link
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+    
   </head>
   <body>
     <!-- Navbar -->
-    <div class="nav">
-      <a href="#">Home</a>
-      <a href="#">Blogs</a>
-      <a href="#">FAQS</a>
-      <label class="logo"><img src="" alt="Logo" width="250" height="100"/></label>
-      <a href="">Channels</a>
-      <a href="">PROFILE</a>
-      <a href="">Log In</a>
-      </div>
+    <header class="header section" data-header>
+      <div class="container">
+  
+        <a href="#" class="logo">
+          <img src="/static/images/cv2.png" width="129" height="40" alt="Blogy logo">
+        </a>
+  
+        <nav class="navbar" data-navbar>
+          <ul class="navbar-list">
+  
+            <li class="navbar-item">
+              <a href="/" class="navbar-link hover:underline" data-nav-link>Home</a>
+            </li>
+  
+            <li class="navbar-item">
+              <a href="#" class="navbar-link hover:underline" data-nav-link>Channels</a>
+            </li>
+  
+            <li class="navbar-item">
+              <a href="#" class="navbar-link hover:underline" data-nav-link>Blogs</a>
+            </li>
 
+            <li class="navbar-item">
+              <a href="#" class="navbar-link hover:underline" data-nav-link>Login/Sign Up</a>
+            </li>
+  
+          </ul>
+        </nav>
+  
+        <div class="wrapper">
+  
+         
+  
+          <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
+            <span class="span one"></span>
+            <span class="span two"></span>
+            <span class="span three"></span>
+          </button>
+  
+          
+  
+        </div>
+  
+      </div>
+    </header>
+    
+    
+    {% block body %}{% endblock body %}
+    <script src="/static/js/script.js"></script>
     </body>
 </html>

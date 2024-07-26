@@ -5,7 +5,7 @@ from .models import clg_info
 
 # Create your views here.
 def home(request):
-    return render(request,"navbar.html")
+    return render(request,"home.html")
 
 def clg_info(request):
     if request.method=="POST":
