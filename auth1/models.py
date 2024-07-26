@@ -33,7 +33,7 @@ class Users_main(models.Model):
     user_id = models.CharField(max_length=50)
     phone = models.CharField(max_length=100)
     city = models.CharField(max_length=50)
-    qualication = models.CharField(max_length=100)
+    qualification = models.CharField(max_length=100)
     profile_pic = models.TextField()
     dob = models.DateField()
     bio = models.TextField()

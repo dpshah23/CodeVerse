@@ -1,7 +1,8 @@
 from django.shortcuts import render,redirect
-
+import datetime
 from django.contrib import messages
-
+import random 
+import string
 from .models import Users_main
 from django.http import HttpResponse
 
@@ -44,3 +45,17 @@ def check_user(request,username):
         return HttpResponse({"success":False})
     except Users_main.DoesNotExist:
         return HttpResponse({"success":True})
+    
+def signup( request):
+    if request.method=="POST":
+        username=request.POST.get('username')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        user_id = ''.join(random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for _ in range(16))
+        time_stamp = datetime.today()
+        
+        obj = Users_main(username = username , email=email ,user_id = user_id  , name = None , phone = None , city = None , qualification =None , profile_pic = None , dob = None , bio = None , description = None , time_stamp = time_stamp , is_active = False , level = None , tech = None)
+        obj.set_password(password)
+        obj.save()
+
+    return render (request , 'next_user.html')

@@ -62,11 +62,20 @@ def quiz_ans_beg(request):
             
             ans5 = request.POST.get('ans5')
             q5 = request.POST.get( 'q5')
+            final_ans = []
             
-            ans1 == Quiz.objects.get(question=q1).ans
-            ans2 == Quiz.objects.get(question = q2).ans
-            ans3 == Quiz.objects.get(question = q3).ans
-            ans4 == Quiz.objects.get(question = q4).ans
-            ans5 == Quiz.objects.get(question = q5).ans
-
-
+            if ans1 == Quiz.objects.get(id=q1).ans :
+                final_ans.append()
+            if ans2 == Quiz.objects.get(id = q2).ans :
+                final_ans.append()
+            if ans3 == Quiz.objects.get(id = q3).ans :
+                final_ans.append()
+            if ans4 == Quiz.objects.get(id = q4).ans :
+                final_ans.append()
+            if ans5 == Quiz.objects.get(id = q5).ans :
+                final_ans.append()
+            
+        
+            return render(request,"get_score.html",{'score':len(final_ans)}) 
+        
+        
