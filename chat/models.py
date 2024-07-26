@@ -9,7 +9,7 @@ import django.utils.timezone
 class Chatgroup(models.Model):
     group_id=models.CharField(max_length=150,default=None,null=True)
     group_name = models.CharField(max_length= 100 , unique=True)
-    users_online = models.ManyToManyField(Users , related_name='online_in_groups', blank=True)
+    users_online = models.ManyToManyField(Users_main , related_name='online_in_groups', blank=True)
     
     
     def __str__(self):
@@ -35,7 +35,7 @@ class Group_msg(models.Model):
 
     def get_profile_pic(self):
         try:
-            joined = Joined.objects.get(group_id=self.group_id, username=self.username)
+            joined = Users_main.objects.get(username=self.username)
             return joined.profile_pic
         except Joined.DoesNotExist:
             return None
