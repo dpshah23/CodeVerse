@@ -15,6 +15,10 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
 from django_ratelimit.decorators import ratelimit
+from PIL import Image, ImageDraw, ImageFont
+import io
+import base64
+
 
 # Create your views here.
 
@@ -63,12 +67,18 @@ def signup( request):
         password = request.POST.get('password')
         user_id = ''.join(random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for _ in range(16))
         time_stamp = datetime.today()
+        profile_pic = generate_avatar_base64(email)
         
-        obj = Users_main(username = username , email=email ,user_id = user_id  , name = None , phone = None , city = None , qualification =None , profile_pic = None , dob = None , bio = None , description = None , time_stamp = time_stamp , is_active = False , level = None , tech = None)
+        obj = Users_main(username = username , email=email ,user_id = user_id  , name = None , phone = None , city = None , qualification =None , profile_pic = profile_pic , dob = None , bio = None , description = None , time_stamp = time_stamp , is_active = False , level = None , tech = None)
         obj.set_password(password)
         obj.save()
+        return redirect('/more_info/<user_id>/')
 
-    return render (request , 'next_user.html')
+    return render (request , 'login.html')
+
+def more_info(request , user_id):
+    if request.method == "POST":
+        pass
 
 @ratelimit(key='ip', rate='10/m')
 def reset(request):
@@ -148,4 +158,31 @@ def reset(request):
             return render(request, 'reset.html')
 
     return render(request, 'reset.html')
+
+def generate_avatar_base64(email, size=128):
+    image = Image.new('RGB', (size, size), color='white')
+    draw = ImageDraw.Draw(image)
+
+    circle_color = tuple(random.randint(0, 255) for _ in range(3))
+    draw.ellipse([(0, 0), (size, size)], fill=circle_color, outline=None)
+
+    text = email[0].upper()
+    font_size = size // 2
+    try:
+        font = ImageFont.truetype("arial.ttf", font_size)
+    except IOError:
+        font = ImageFont.load_default()
+
+    bbox = draw.textbbox((0, 0), text, font=font)
+    text_width = bbox[2] - bbox[0]
+    text_height = bbox[3] - bbox[1]
+    text_x = (size - text_width) / 2
+    text_y = (size - text_height) / 2
+    draw.text((text_x, text_y), text, font=font, fill='white')
+
+    buffer = io.BytesIO()
+    image.save(buffer, format="PNG")
+
+    img_str = base64.b64encode(buffer.getvalue()).decode('utf-8')
+    return img_str
 
