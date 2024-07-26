@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from datetime import datetime
 from .models import clg_info
@@ -21,6 +21,10 @@ def clg_info(request):
         obj=clg_info(name=name,address=address,email=email,phone=phone,dept=dept,timestamp=date)
         obj.save()
         
-    return render(request , "navbar.html")
+    return redirect('/')
         
-        
+def quiz (request):
+    try:
+    except:
+        pass
+    return render(request,"quiz.html")
