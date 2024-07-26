@@ -2,6 +2,8 @@ from django.shortcuts import render
 
 from django.contrib import messages
 
+from .models import Users
+
 
 # Create your views here.
 
@@ -14,6 +16,14 @@ def login(request):
             user=Users.objects.get(email=email)
 
             if not user.isactive:
-                messages.error(request,"")
+                messages.error(request,"Some Unusual Activity Happend to your account . So We have Blocked Your Account")
+                return render(request,"login.html")
+            
+            islogin=user.check_password(password)
+            if user.email==email and islogin:
+                pass
+        except Users.DoesNotExist:
+            messages.error(request,"User Does Not Exist..")
+            return render(request,"login.html")
         
     return render(request,"login.html")
