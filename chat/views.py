@@ -99,3 +99,18 @@ def home_view(request , chatroom_name):
     }
     return render (request , 'chat.html' , context)
 
+def join(request,id):
+    if 'email' and 'username' not in request.session:
+        messages.error(request,"Please Login")
+        return redirect("/auth/login")
+    
+    if request.method=="POST":
+        username=request.session['username']
+        email=request.session['email']
+
+        usercreate=Joined(username=username,email=email,group_id=id,timestamp=datetime.today())
+
+        usercreate.save()
+
+    return render(request,"accept_invite.html")
+
