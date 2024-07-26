@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'home',
     'error_handling',
     'jazzmin',
+    'chat',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
