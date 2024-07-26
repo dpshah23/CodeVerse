@@ -4,7 +4,6 @@ from auth1.models import *
 from datetime import datetime
 import django.utils.timezone
 
-
 # Create your models here.
 class Chatgroup(models.Model):
     group_id=models.CharField(max_length=150,default=None,null=True)
