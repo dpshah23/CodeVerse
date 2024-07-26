@@ -1,0 +1,36 @@
+{% extends "navbar.html" %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blogs | Code Verse</title>
+    <link href="/static/css/blogs.css" rel="stylesheet" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Inconsolata:wght@200..900&display=swap");
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+        <div class="hero-content">
+          <h1>Stay connected to the pulse of the coding world with exciting Blogs.</h1>
+        </div>
+      </div>
+      {% for blog in blogs %}
+      <div class="blog-container">
+        <div class="blog-card">
+          <center>
+            <div class="blog-image">
+              <img src="" width="80px" heigth="80" alt="Event logo" class="profile-picture" id="profile-picture">
+            </div>
+          </center>
+          <div class="blog-details">
+            <h2><strong>{{blog.title}}</strong></h2>
+            <p>{{blog.description}}</p>
+            <a href="#"><button class="view_more">View More</button></a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>      
+    </body>
+  </html>
