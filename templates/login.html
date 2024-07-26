@@ -24,14 +24,16 @@
             type="email"
             class="email ele"
             placeholder="youremail@email.com"
+            name = "email"
           />
-          <input type="password" class="password ele" placeholder="password" />
+          <input type="password" name = "password" class="password ele" placeholder="password" />
           <button class="submit" onclick="showToast(loginmsg)">Login</button>
         </div>
         <!--signup form-->
         <div class="signup-box" id="signup-form">
           <input
             type="text"
+            name = "username"
             class="name ele"
             id="username"
             placeholder="Enter your name"
@@ -39,12 +41,14 @@
           <span id="username-error" class="error-message"></span>
           <input
             type="email"
+            name = "email"
             class="email ele"
             placeholder="youremail@email.com"
           />
           <div class="password-container ele">
             <input
               type="password"
+              name = "password"
               class="password ele"
               id="password"
               placeholder="Password"
