@@ -1,5 +1,4 @@
 django
 channels[daphne]
-smtplib
 django-ratelimit
 python-dotenv

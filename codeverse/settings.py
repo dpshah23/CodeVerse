@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-xz+fm28+a)d&5m8b_cpw^467!8cuuj%izvm5o4cljd^$h3r(s!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -53,6 +53,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'codeverse.urls'
+
+import os
 
 TEMPLATES = [
     {

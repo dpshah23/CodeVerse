@@ -10,5 +10,4 @@ handler500 = server_error
 
 
 urlpatterns = [
-
 ]
