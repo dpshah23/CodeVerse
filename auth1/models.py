@@ -12,6 +12,7 @@ class Visit(models.Model):
 
 class Users (models.Model):
     name = models.CharField(max_length=100)
+    username=models.CharField(max_length=100,blank=True,unique=True)
     email = models.EmailField(max_length=100)
     password = models.CharField(max_length=100)
     user_id = models.CharField(max_length=50)
@@ -35,18 +36,5 @@ class Users (models.Model):
 
     def check_password(self, raw_password):
         return check_password(raw_password, self.password)
-    
-    
-class otps(models.Model):
-    email = models.EmailField(max_length=100)
-    otp = models.IntegerField()
-    created_at = models.DateField()
-    expires_at = models.DateField()
-    
-    def is_expired(self):
-        return timezone.now() > self.expires_at
-
-    def __str__(self):
-        return self.email
     
     
