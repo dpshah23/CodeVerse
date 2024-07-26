@@ -1,0 +1,12 @@
+{% extends "navbar.html" %}
+
+{% block body %}
+
+<h1>List of all joined channels</h1>
+
+{% for channel in channels %}
+<a href="/chat/{{channel.group_id}}">{{channel.group_name}}</a>
+{% endfor %}
+{% endblock body %}
+
+
