@@ -6,5 +6,6 @@ urlpatterns = [
     path('',include('error_handling.urls')),
     path('auth/', include('auth1.urls')),
     path('dj-admin/', admin.site.urls),
+    path('chat/',include('chat.urls'))
     
 ]
