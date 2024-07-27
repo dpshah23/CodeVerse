@@ -87,6 +87,7 @@ def user_details(request , user_id):
         phone = request.POST.get( 'phone' )
         city = request.POST.get( 'city' )
         qualifications = request.POST.get( 'qualifications' )
+        experience = request.POST.get('experience')
         profile_pic = request.POST.get('profile_pic')
         dob = request.POST.get( 'dob' )
         bio = request.POST.get( 'bio' )
@@ -99,6 +100,7 @@ def user_details(request , user_id):
                 'phone' : phone ,
                 'city' : city ,
                 'qualification' : qualifications ,
+                'experience': experience,
                 'profile_pic' : profile_pic ,
                 'dob' : dob ,
                 'bio' : bio ,
@@ -107,7 +109,7 @@ def user_details(request , user_id):
                 
             }
         )
-        return render( request , 'login.html')
+        return render( request , 'quiz.html' , {'level':level})
     return render (request , 'user_details.html')
 
 
