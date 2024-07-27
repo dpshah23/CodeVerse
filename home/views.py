@@ -40,15 +40,22 @@ def quiz (request):
         level =  Users_main.objects.get(email=email).level
         tech =  Users_main.objects.get(email=email).tech
         questions = Quiz.objects.filter(level=level , tech=tech)
-        final = random.sample(questions, 5) 
+        if level=="begineer":
+            
+            final = random.sample(questions, 5)
+            
+        elif level=="intermediate":
+            final=random.sample(questions,3)
+            
+        else:
+            final=random.sample(questions,3)
             
         print(final)
     
                 
-                
     except Exception as e:
         print(e)
-    return HttpResponse("hello")
+    return render(request,"Quiz.html",{"questions":final})
 
 def quiz_ans_beg(request):
     
