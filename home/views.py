@@ -4,6 +4,7 @@ from datetime import datetime
 from .models import *
 from auth1.models import Users_main
 import random
+from django.contrib import messages
 
 # Create your views here.
 def home(request):
@@ -78,4 +79,48 @@ def quiz_ans_beg(request):
         
             return render(request,"get_score.html",{'score':len(final_ans)}) 
         
+def blog(request , blog_id):
+    
+    try :
+        author = Blog.objects.get(blog_id=blog_id).author
+        head_title = Blog.objects.get(blog_id=blog_id).head_title
+        title1 = Blog.objects.get(blog_id=blog_id).title1
+        title2 = Blog.objects.get(blog_id=blog_id).title2
+        title3 = Blog.objects.get(blog_id=blog_id).title3
+        img1 = Blog.objects.get(blog_id=blog_id).img1
+        img2 = Blog.objects.get(blog_id=blog_id).img2
+        img3 = Blog.objects.get(blog_id=blog_id).img3
+        content1 = Blog.objects.get(blog_id=blog_id).content1
+        content2 = Blog.objects.get(blog_id=blog_id).content2
+        content3 = Blog.objects.get(blog_id=blog_id).content3
+        keyword1 = Blog.objects.get(blog_id=blog_id).keyword1
+        keyword2 = Blog.objects.get(blog_id=blog_id).keyword2
+        keyword3 = Blog.objects.get(blog_id=blog_id).keyword3
         
+        data = {
+            'author' : author ,
+            'head_title' : head_title ,
+            'title1'  : title1 ,
+            'title2' : title2 ,
+            'title3' : title3 ,
+            'img1' : img1 ,
+            'img2' : img2 ,
+            'img3' : img3 ,
+            'content1' : content1 ,
+            'content2' : content2 ,
+            'content3' : content3 ,
+            'keyword1' : keyword1 ,
+            'keyword2' : keyword2,
+            'keyword3' : keyword3,
+            
+            
+        }
+        
+        return render (request , 'blogs_disp.html' , {'data' : data})
+    
+    except Blog.DoesNotExist:
+        messages.error("This blog does not exist")
+        return redirect('/')
+    except Exception as e :
+        print(e)
+        return redirect('/')

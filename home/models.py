@@ -41,3 +41,25 @@ class Quiz(models.Model):
     
     def _str_(self):
         return self.question
+    
+class Blog(models.Model):
+    author = models.CharField(max_length=100)
+    blog_id = models.CharField(max_length=100)
+    head_title = models.CharField(max_length=200)
+    title1 = models.TextField()
+    title2 = models.TextField(blank=True)
+    title3 = models.TextField(blank=True)
+    img1 = models.TextField( blank = True)
+    img2 = models.TextField( blank = True)
+    img3 = models.TextField( blank = True)
+    content1 = models.TextField()
+    content2 = models.TextField(blank=True)
+    content3 = models.TextField(blank=True)
+    keyword1 = models.CharField(max_length= 100)
+    keyword2 = models.CharField(max_length= 100 , blank=True)
+    keyword3 = models.CharField(max_length= 100 , blank=True)
+    time_stamp = models.DateField()
+    
+    def __str__(self):
+        return self.head_title
+    
