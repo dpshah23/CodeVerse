@@ -1,0 +1,73 @@
+{% extends "navbar.html" %}
+{% block title %}User Details{% endblock title %}
+
+{% block body%}
+<link rel="stylesheet" href="/static/css/login.css">  
+
+<form action="" method="POST">
+    {%csrf_token%}
+    <div class="login-signup-box" id="signup-form">
+        Enter your Name
+    <input type="number" class="name ele" id="name"  name="name" required />
+
+       Enter your Contact Number
+      <input type="number" class="name ele" id="contactno"  name="phone" required />
+
+      Enter your City Name
+      <input type="text" class="name ele" id="city"  name="city"  required/>
+
+      Enter your College
+      <input type="text" class="name ele" id="college"  name="college"  required/>
+
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           Choose the option which best suits your Qualification
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Secondary Education</a>
+          <a class="dropdown-item" href="#">Higher Secondary Education</a>
+          <a class="dropdown-item" href="#">Diploma Student</a>
+          <a class="dropdown-item" href="#">UnderGraduate Student</a>
+          <a class="dropdown-item" href="#">Graduate Student</a>
+          <a class="dropdown-item" href="#">PostGraduate Student</a>
+          <a class="dropdown-item" href="#">Job Holder</a>
+
+        </div>
+      </div>
+      Select your Profile Picture
+      <input type="file" class="name ele" id="profile_pic"  name="profile_pic"  required/> 
+
+      Select Date of Birth
+      <input type="date"  class="name ele" id="date" name="date" required>
+
+      Bio 
+      <textarea id="bio" class="name ele"  name="bio" required></textarea> 
+      
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           Choose the option which best suits your Level
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Beginner</a>
+          <a class="dropdown-item" href="#">Intermidiate</a>
+          <a class="dropdown-item" href="#">Expert</a>
+        </div>
+      </div>
+
+      Description 
+      <textarea id="description" class="name ele"  name="description" required></textarea>   
+
+        Select Techs you are familiar with 
+        <select class="custom-select" multiple size="6">
+        <option value="html">Front End Development</option>
+        <option value="css">Back End Development</option>
+        <option value="javascript">AI/ML</option>
+        <option value="python">App Development</option>
+        <option value="java">Game Development</option>
+        <option value="sql">Data Science</option>
+      </select>
+    </form>
+  </div>
+      <button class="submit" onclick="showToast(signupmsg)">Signup</button>
+    </div>
+  </form>
