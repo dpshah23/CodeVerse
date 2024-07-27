@@ -5,6 +5,12 @@ from .models import *
 from auth1.models import Users_main
 import random
 from django.contrib import messages
+import json
+import google.generativeai as genai
+from dotenv import load_dotenv
+import os
+from django.views.decorators.csrf import csrf_exempt
+
 
 # Create your views here.
 def home(request):
@@ -131,3 +137,24 @@ def blog_disp(request , blog_id):
     
 def all_blogs(request):
     pass
+
+
+@csrf_exempt
+def api_reply(request):
+    if request.method=="POST":
+        load_dotenv()
+        api_key=os.getenv('API_KEY_GEMINI')
+        data=json.loads(request.body)
+        question = data.get('question', '')
+        try:
+            genai.configure(api_key=api_key)
+
+            model = genai.GenerativeModel('gemini-pro')
+
+            response = model.generate_content(question)
+
+            return HttpResponse({'data':response.text})
+
+        except Exception as e:
+            print(e)
+            return HttpResponse({'error':False})

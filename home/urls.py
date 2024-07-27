@@ -7,4 +7,5 @@ urlpatterns = [
     path('channels/',channels,name="channels"),
     path('blogs/<blog_id>/' , blog_disp , name = 'blogs_display'),
     path('blogs/' , all_blogs , name = 'all_blogs'),
+    path('/api/chatbot/',api_reply,name="api_reply")
 ]
