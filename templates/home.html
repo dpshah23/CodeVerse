@@ -1,3 +1,4 @@
+
 {% extends 'navbar.html' %}
 {% block title %}
   Home
@@ -11,109 +12,569 @@
         </div>
       </section>
 
-<<<<<<< HEAD
       <section class="section beg" aria-label="beg post">
         <div class="container">
           <div class="channel-card frontend section-subtitle" onclick="openModal('frontendModal')">
             Hey <strong class="strong">Beigneer</strong> start with this
             <i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
-          </div>
-
-          <div id="frontendModal" class="modal">
-            <div class="modal-content">
-              <span class="close" onclick="closeModal('frontendModal')">&times;</span>
-              <h1><i class="fas fa-laptop-code section-icon"></i> Frontend Development Overview</h1>
-              <!-- Rest of your modal content -->
-              <div class="section">
-                <h2><i class="fas fa-info-circle section-icon"></i> What is Frontend Development?</h2>
-                <p>Frontend development, also known as client-side development, is the practice of producing HTML, CSS, and JavaScript for a website or web application so that a user can see and interact with them directly. The challenge associated with frontend development is that the tools and techniques used to create the frontend of a website change constantly, and so the developer needs to constantly be aware of how the field is developing.</p>
-              </div>
-              <div class="section">
-                <h2><i class="fas fa-code section-icon"></i> Basic Languages and Technologies:</h2>
-
-                <h3><i class="fab fa-html5 section-icon"></i> HTML (HyperText Markup Language)</h3>
-                <p>
-                  <span class="key-point">Purpose:</span> HTML is the backbone of any website development process, without which a web page does not exist. HTML is a markup language that defines the structure of your content.
-                </p>
-                <p>
-                  <span class="key-point">Example:</span> Think of HTML as the skeleton of a webpage. It helps in defining where the header, body, and footer of the page are located.
-                </p>
-
-                <h3><i class="fab fa-css3-alt section-icon"></i> CSS (Cascading Style Sheets)</h3>
-                <p>
-                  <span class="key-point">Purpose:</span> While HTML structures your content, CSS is what makes your website look good. CSS is a design language intended to simplify the process of making web pages presentable.
-                </p>
-                <p>
-                  <span class="key-point">Example:</span> CSS is used to apply styles to HTML elements. For instance, you can use CSS to change the color, font, and layout of your web pages. It’s what makes your content visually appealing and adaptable to different devices.
-                </p>
-
-                <h3><i class="fab fa-js section-icon"></i> JavaScript</h3>
-                <p>
-                  <span class="key-point">Purpose:</span> JavaScript is a programming language used to create dynamic content that can interact with users. If HTML is the skeleton and CSS is the skin, JavaScript is the muscles.
-                </p>
-                <p>
-                  <span class="key-point">Example:</span> Use JavaScript to create things like interactive maps, animated graphics, and responsive forms. For instance, when you fill out a form online and get instant feedback (like checking if your email is valid), that’s JavaScript in action.
-                </p>
-              </div>
-
-              <div class="section">
-                <h2><i class="fas fa-lightbulb section-icon"></i> Pre-requisite Knowledge:</h2>
-                <ul>
-                  <li>
-                    <strong>Basic Web Concepts:</strong> Understanding of how the web works, including concepts like HTTP, browsers, and web servers.
-                  </li>
-                  <li>
-                    <strong>Version Control:</strong> Familiarity with version control systems (e.g., Git) to track changes and collaborate with others.
-                  </li>
-                  <li>
-                    <strong>Programming Basics:</strong> Basic knowledge of programming concepts (variables, loops, conditionals) which are essential to write efficient code.
-                  </li>
-                </ul>
-              </div>
-
-              <div class="section">
-                <h2><i class="fas fa-cogs section-icon"></i> How Frontend Development Works:</h2>
-                <h3><i class="fas fa-sitemap section-icon"></i> Structure with HTML</h3>
-                <p>HTML uses tags and attributes to organize the content on the webpage. Tags are the building blocks, and attributes provide additional information about elements.</p>
-                <p>
-                  <span class="key-point">Example:</span> <code>&lt;h1&gt;</code> tag for headings,
-                  <code>&lt;p&gt;</code> tag for paragraphs, <code>&lt;a&gt;</code> tag for links.
-                </p>
-
-                <h3><i class="fas fa-paint-brush section-icon"></i> Style with CSS</h3>
-                <p>CSS provides style rules that define how HTML elements are displayed. It includes layout, color, fonts, and overall visual effects.</p>
-                <p>
-                  <span class="key-point">Example:</span> <code>color: red;</code> to make text red,
-                  <code>margin: 10px;</code> to create space around elements.
-                </p>
-
-                <h3><i class="fas fa-magic section-icon"></i> Interactivity with JavaScript</h3>
-                <p>JavaScript enables dynamic content and interactive elements on the webpage. It can manipulate HTML and CSS to update the UI, control multimedia, animate images, etc.</p>
-                <p>
-                  <span class="key-point">Example:</span>
-                  <code>document.getElementById("myElement").innerHTML = "Hello World!";</code> changes the content of an HTML element with the ID <code>myElement</code>.
-                </p>
-
-                <h3><i class="fas fa-mobile-alt section-icon"></i> Responsive Design</h3>
-                <p>Ensuring that your web pages look good on all devices, from desktops to tablets to smartphones. This is often achieved through media queries and flexible grid layouts in CSS.</p>
-                <p>
-                  <span class="key-point">Example:</span> Using a CSS media query to apply different styles for screen widths below 600px, ensuring a mobile-friendly design.
-                </p>
-              </div>
-
-              <div class="section">
-                <h2><i class="fas fa-thumbs-up section-icon"></i> Conclusion</h2>
-                <p>Frontend development is essential for creating the visual and interactive aspects of a website. By mastering HTML, CSS, and JavaScript, you can build beautiful, functional, and user-friendly web interfaces. This not only enhances user experience but also contributes to the overall success of a web project.</p>
-              </div>
-              <!-- Other sections -->
-              <div class="button-container">
-                <p>If you're eager to dive deeper into frontend development and connect with fellow learners and experienced developers, consider signing up and joining our community server. In our server, you can chat with experts, get answers to your questions, and share your progress. It's a fantastic opportunity to learn, collaborate, and grow in the world of frontend development.</p>
-                <a href="/login" class="btn">Go to Channels</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+          </div>          
+                <section class="section beg" aria-label="beg post">
+                  <div class="container">
+                    <!-- Frontend Development -->
+                    <div class="channel-card frontend section-subtitle" onclick="openModal('frontendModal')">
+                      Hey <strong class="strong">Beginner</strong> start with Frontend Development
+                      <i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
+                    </div>
+          
+                    <div id="frontendModal" class="modal">
+                      <div class="modal-content">
+                        <span class="close" onclick="closeModal('frontendModal')">&times;</span>
+                        <h1><i class="fas fa-laptop-code section-icon"></i> Frontend Development Overview</h1>
+                        <!-- Rest of your modal content -->
+                        <div class="section">
+                          <h2><i class="fas fa-info-circle section-icon"></i> What is Frontend Development?</h2>
+                          <p>Frontend development, also known as client-side development, is the practice of producing HTML, CSS, and JavaScript for a website or web application so that a user can see and interact with them directly. The challenge associated with frontend development is that the tools and techniques used to create the frontend of a website change constantly, and so the developer needs to constantly be aware of how the field is developing.</p>
+                        </div>
+                        <div class="section">
+                          <h2><i class="fas fa-code section-icon"></i> Basic Languages and Technologies:</h2>
+          
+                          <h3><i class="fab fa-html5 section-icon"></i> HTML (HyperText Markup Language)</h3>
+                          <p>
+                            <span class="key-point">Purpose:</span> HTML is the backbone of any website development process, without which a web page does not exist. HTML is a markup language that defines the structure of your content.
+                          </p>
+                          <p>
+                            <span class="key-point">Example:</span> Think of HTML as the skeleton of a webpage. It helps in defining where the header, body, and footer of the page are located.
+                          </p>
+          
+                          <h3><i class="fab fa-css3-alt section-icon"></i> CSS (Cascading Style Sheets)</h3>
+                          <p>
+                            <span class="key-point">Purpose:</span> While HTML structures your content, CSS is what makes your website look good. CSS is a design language intended to simplify the process of making web pages presentable.
+                          </p>
+                          <p>
+                            <span class="key-point">Example:</span> CSS is used to apply styles to HTML elements. For instance, you can use CSS to change the color, font, and layout of your web pages. It’s what makes your content visually appealing and adaptable to different devices.
+                          </p>
+          
+                          <h3><i class="fab fa-js section-icon"></i> JavaScript</h3>
+                          <p>
+                            <span class="key-point">Purpose:</span> JavaScript is a programming language used to create dynamic content that can interact with users. If HTML is the skeleton and CSS is the skin, JavaScript is the muscles.
+                          </p>
+                          <p>
+                            <span class="key-point">Example:</span> Use JavaScript to create things like interactive maps, animated graphics, and responsive forms. For instance, when you fill out a form online and get instant feedback (like checking if your email is valid), that’s JavaScript in action.
+                          </p>
+                        </div>
+          
+                        <div class="section">
+                          <h2><i class="fas fa-lightbulb section-icon"></i> Pre-requisite Knowledge:</h2>
+                          <ul>
+                            <li>
+                              <strong>Basic Web Concepts:</strong> Understanding of how the web works, including concepts like HTTP, browsers, and web servers.
+                            </li>
+                            <li>
+                              <strong>Version Control:</strong> Familiarity with version control systems (e.g., Git) to track changes and collaborate with others.
+                            </li>
+                            <li>
+                              <strong>Programming Basics:</strong> Basic knowledge of programming concepts (variables, loops, conditionals) which are essential to write efficient code.
+                            </li>
+                          </ul>
+                        </div>
+          
+                        <div class="section">
+                          <h2><i class="fas fa-cogs section-icon"></i> How Frontend Development Works:</h2>
+                          <h3><i class="fas fa-sitemap section-icon"></i> Structure with HTML</h3>
+                          <p>HTML uses tags and attributes to organize the content on the webpage. Tags are the building blocks, and attributes provide additional information about elements.</p>
+                          <p>
+                            <span class="key-point">Example:</span> <code>&lt;h1&gt;</code> tag for headings,
+                            <code>&lt;p&gt;</code> tag for paragraphs, <code>&lt;a&gt;</code> tag for links.
+                          </p>
+          
+                          <h3><i class="fas fa-paint-brush section-icon"></i> Style with CSS</h3>
+                          <p>CSS provides style rules that define how HTML elements are displayed. It includes layout, color, fonts, and overall visual effects.</p>
+                          <p>
+                            <span class="key-point">Example:</span> <code>color: red;</code> to make text red,
+                            <code>margin: 10px;</code> to create space around elements.
+                          </p>
+          
+                          <h3><i class="fas fa-magic section-icon"></i> Interactivity with JavaScript</h3>
+                          <p>JavaScript enables dynamic content and interactive elements on the webpage. It can manipulate HTML and CSS to update the UI, control multimedia, animate images, etc.</p>
+                          <p>
+                            <span class="key-point">Example:</span>
+                            <code>document.getElementById("myElement").innerHTML = "Hello World!";</code> changes the content of an HTML element with the ID <code>myElement</code>.
+                          </p>
+          
+                          <h3><i class="fas fa-mobile-alt section-icon"></i> Responsive Design</h3>
+                          <p>Ensuring that your web pages look good on all devices, from desktops to tablets to smartphones. This is often achieved through media queries and flexible grid layouts in CSS.</p>
+                          <p>
+                            <span class="key-point">Example:</span> Using a CSS media query to apply different styles for screen widths below 600px, ensuring a mobile-friendly design.
+                          </p>
+                        </div>
+          
+                        <div class="section">
+                          <h2><i class="fas fa-thumbs-up section-icon"></i> Conclusion</h2>
+                          <p>Frontend development is essential for creating the visual and interactive aspects of a website. By mastering HTML, CSS, and JavaScript, you can build beautiful, functional, and user-friendly web interfaces. This not only enhances user experience but also contributes to the overall success of a web project.</p>
+                        </div>
+                        <!-- Other sections -->
+                        <div class="button-container">
+                          <p>If you're eager to dive deeper into frontend development and connect with fellow learners and experienced developers, consider signing up and joining our community server. In our server, you can chat with experts, get answers to your questions, and share your progress. It's a fantastic opportunity to learn, collaborate, and grow in the world of frontend development.</p>
+                          <a href="/login" class="btn">Go to Channels</a>
+                        </div>
+                      </div>
+                    </div>
+          
+                    <!-- Backend Development -->
+                    <div class="channel-card backend section-subtitle" onclick="openModal('backendModal')">
+                      Hey <strong class="strong">Beginner</strong> start with Backend Development
+                      <i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
+                    </div>
+          
+                    <div id="backendModal" class="modal">
+                      <div class="modal-content">
+                        <span class="close" onclick="closeModal('backendModal')">&times;</span>
+                        <h1><i class="fas fa-server section-icon"></i> Backend Development Overview</h1>
+                        <div class="section">
+                          <h2><i class="fas fa-info-circle section-icon"></i> What is Backend Development?</h2>
+                          <p>Backend development, also known as server-side development, involves creating the logic, database interactions, authentication, and server configuration necessary for the functionality of a website or web application. The backend is what makes the frontend work, handling data processing, storage, and communication with the server.</p>
+                        </div>
+                        <div class="section">
+                          <h2><i class="fas fa-code section-icon"></i> Basic Languages and Technologies:</h2>
+          
+                          <h3><i class="fab fa-python section-icon"></i> Python</h3>
+                          <p>
+                            <span class="key-point">Purpose:</span> Python is a versatile programming language commonly used for backend development due to its readability and extensive libraries.
+                          </p>
+                          <p>
+                            <span class="key-point">Example:</span> Python frameworks like Django and Flask help in building scalable web applications.
+                          </p>
+          
+                          <h3><i class="fab fa-js section-icon"></i> JavaScript (Node.js)</h3>
+                          <p>
+                            <span class="key-point">Purpose:</span> Node.js allows JavaScript to be used for backend development, enabling full-stack development with a single language.
+                          </p>
+                          <p>
+                            <span class="key-point">Example:</span> Node.js frameworks like Express.js are popular for building fast, efficient server-side applications.
+                          </p>
+          
+                          <h3><i class="fab fa-java section-icon"></i> Java</h3>
+                          <p>
+                            <span class="key-point">Purpose:</span> Java is a robust and widely-used language for backend development, known for its portability and performance.
+                          </p>
+                          <p>
+                            <span class="key-point">Example:</span> Java frameworks like Spring Boot facilitate the creation of enterprise-level applications.
+                          </p>
+                        </div>
+          
+                        <div class="section">
+                          <h2><i class="fas fa-database section-icon"></i> Databases:</h2>
+                          <h3><i class="fas fa-database section-icon"></i> SQL (Structured Query Language)</h3>
+                          <p>
+                            <span class="key-point">Purpose:</span> SQL is used to communicate with and manipulate databases, such as MySQL, PostgreSQL, and SQLite.
+                          </p>
+                          <p>
+                            <span class="key-point">Example:</span> Use SQL to perform CRUD operations (Create, Read, Update, Delete) on database tables.
+                          </p>
+          
+                          <h3><i class="fas fa-leaf section-icon"></i> NoSQL</h3>
+                          <p>
+                            <span class="key-point">Purpose:</span> NoSQL databases like MongoDB provide a flexible, scalable solution for handling large volumes of unstructured data.
+                          </p>
+                          <p>
+                            <span class="key-point">Example:</span> NoSQL databases are often used in big data and real-time web applications.
+                          </p>
+                        </div>
+          
+                        <div class="section">
+                          <h2><i class="fas fa-lightbulb section-icon"></i> Pre-requisite Knowledge:</h2>
+                          <ul>
+                            <li>
+                              <strong>Server Basics:</strong> Understanding how servers and hosting work.
+                            </li>
+                            <li>
+                              <strong>Networking Concepts:</strong> Knowledge of HTTP, REST, and web protocols.
+                            </li>
+                            <li>
+                              <strong>Security Fundamentals:</strong> Awareness of common security practices like encryption, authentication, and authorization.
+                            </li>
+                          </ul>
+                        </div>
+          
+                        <div class="section">
+                          <h2><i class="fas fa-cogs section-icon"></i> How Backend Development Works:</h2>
+                          <h3><i class="fas fa-project-diagram section-icon"></i> API Development</h3>
+                          <p>Backend developers create APIs (Application Programming Interfaces) that allow the frontend to communicate with the server. APIs handle requests, process data, and return responses.</p>
+                          <p>
+                            <span class="key-point">Example:</span> RESTful APIs and GraphQL are common types of APIs used in web development.
+                          </p>
+          
+                          <h3><i class="fas fa-shield-alt section-icon"></i> Authentication and Authorization</h3>
+                          <p>Ensuring that users are who they claim to be (authentication) and have permission to access certain resources (authorization) are critical aspects of backend development.</p>
+                          <p>
+                            <span class="key-point">Example:</span> Implementing OAuth2.0 for secure user authentication.
+                          </p>
+          
+                          <h3><i class="fas fa-cogs section-icon"></i> Server Management</h3>
+                          <p>Setting up and maintaining servers, managing databases, and ensuring that the application runs smoothly and efficiently are all part of backend development.</p>
+                          <p>
+                            <span class="key-point">Example:</span> Using cloud services like AWS, Azure, or Google Cloud for server management.
+                          </p>
+                        </div>
+          
+                        <div class="section">
+                          <h2><i class="fas fa-thumbs-up section-icon"></i> Conclusion</h2>
+                          <p>Backend development is crucial for building the functionality and logic of web applications. By mastering backend languages, frameworks, and database management, you can create robust, scalable, and secure applications that power the internet. This knowledge forms the backbone of any successful web project.</p>
+                        </div>
+                        <!-- Other sections -->
+                        <div class="button-container">
+                          <p>If you're eager to dive deeper into backend development and connect with fellow learners and experienced developers, consider signing up and joining our community server. In our server, you can chat with experts, get answers to your questions, and share your progress. It's a fantastic opportunity to learn, collaborate, and grow in the world of backend development.</p>
+                          <a href="/login" class="btn">Go to Channels</a>
+                        </div>
+                      </div>
+                    </div>
+          
+                    <!-- AI Development -->
+                    <div class="channel-card ai section-subtitle" onclick="openModal('aiModal')">
+                      Hey <strong class="strong">Beginner</strong> start with AI Development
+                      <i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
+                    </div>
+          
+                    <div id="aiModal" class="modal">
+                      <div class="modal-content">
+                        <span class="close" onclick="closeModal('aiModal')">&times;</span>
+                        <h1><i class="fas fa-brain section-icon"></i> AI Development Overview</h1>
+                        <div class="section">
+                          <h2><i class="fas fa-info-circle section-icon"></i> What is AI Development?</h2>
+                          <p>Artificial Intelligence (AI) development involves creating systems that can perform tasks that would normally require human intelligence, such as learning, reasoning, problem-solving, perception, and language understanding. AI development is a multidisciplinary field that combines computer science, mathematics, psychology, and neuroscience.</p>
+                        </div>
+                        <div class="section">
+                          <h2><i class="fas fa-code section-icon"></i> Basic Languages and Technologies:</h2>
+          
+                          <h3><i class="fab fa-python section-icon"></i> Python</h3>
+                          <p>
+                            <span class="key-point">Purpose:</span> Python is the most popular language for AI development due to its simplicity and the availability of numerous libraries like TensorFlow, Keras, and PyTorch.
+                          </p>
+                          <p>
+                            <span class="key-point">Example:</span> Use Python to implement machine learning algorithms, build neural networks, and develop AI models.
+                          </p>
+          
+                          <h3><i class="fas fa-database section-icon"></i> R</h3>
+                          <p>
+                            <span class="key-point">Purpose:</span> R is a programming language and environment commonly used in statistical computing and data analysis, often utilized in AI and machine learning projects.
+                          </p>
+                          <p>
+                            <span class="key-point">Example:</span> Use R for data analysis, visualization, and building machine learning models.
+                          </p>
+          
+                          <h3><i class="fab fa-java section-icon"></i> Java</h3>
+                          <p>
+                            <span class="key-point">Purpose:</span> Java is also used in AI development, especially in building large-scale and enterprise-level applications.
+                          </p>
+                          <p>
+                            <span class="key-point">Example:</span> Use Java for AI development in conjunction with frameworks like Deeplearning4j.
+                          </p>
+                        </div>
+          
+                        <div class="section">
+                          <h2><i class="fas fa-database section-icon"></i> Key Concepts:</h2>
+                          <h3><i class="fas fa-robot section-icon"></i> Machine Learning</h3>
+                          <p>
+                            <span class="key-point">Purpose:</span> Machine learning is a subset of AI that focuses on the development of algorithms that allow computers to learn from and make predictions based on data.
+                          </p>
+                          <p>
+                            <span class="key-point">Example:</span> Implementing supervised learning algorithms like linear regression and decision trees.
+                          </p>
+          
+                          <h3><i class="fas fa-brain section-icon"></i> Neural Networks</h3>
+                          <p>
+                            <span class="key-point">Purpose:</span> Neural networks are a set of algorithms modeled after the human brain, designed to recognize patterns and interpret data through a kind of machine perception, labeling, or clustering.
+                          </p>
+                          <p>
+                            <span class="key-point">Example:</span> Building convolutional neural networks (CNNs) for image recognition tasks.
+                          </p>
+                        </div>
+          
+                        <div class="section">
+                          <h2><i class="fas fa-lightbulb section-icon"></i> Pre-requisite Knowledge:</h2>
+                          <ul>
+                            <li>
+                              <strong>Mathematics:</strong> Strong understanding of linear algebra, calculus, and probability theory.
+                            </li>
+                            <li>
+                              <strong>Data Analysis:</strong> Skills in data preprocessing, cleaning, and visualization.
+                            </li>
+                            <li>
+                              <strong>Programming:</strong> Proficiency in programming languages like Python or R.
+                            </li>
+                          </ul>
+                        </div>
+          
+                        <div class="section">
+                          <h2><i class="fas fa-cogs section-icon"></i> How AI Development Works:</h2>
+                          <h3><i class="fas fa-brain section-icon"></i> Data Collection and Preparation</h3>
+                          <p>Collecting, cleaning, and preprocessing data is the first step in AI development. Quality data is crucial for building accurate models.</p>
+                          <p>
+                            <span class="key-point">Example:</span> Using libraries like Pandas and NumPy for data manipulation and analysis.
+                          </p>
+          
+                          <h3><i class="fas fa-project-diagram section-icon"></i> Model Building</h3>
+                          <p>Creating machine learning models involves selecting algorithms, training models, and evaluating their performance. This can be done using libraries like Scikit-learn, TensorFlow, or PyTorch.</p>
+                          <p>
+                            <span class="key-point">Example:</span> Implementing a regression model to predict housing prices based on various features.
+                          </p>
+          
+                          <h3><i class="fas fa-sync-alt section-icon"></i> Model Deployment and Maintenance</h3>
+                          <p>Deploying models into production environments where they can be used to make predictions on new data. Ongoing monitoring and maintenance are necessary to ensure models remain accurate and effective.</p>
+                          <p>
+                            <span class="key-point">Example:</span> Using Flask or Django to create APIs for serving machine learning models.
+                          </p>
+                        </div>
+          
+                        <div class="section">
+                          <h2><i class="fas fa-thumbs-up section-icon"></i> Conclusion</h2>
+                          <p>AI development is at the forefront of technology, enabling machines to perform complex tasks with human-like intelligence. By mastering AI development techniques, you can build innovative solutions that transform industries and improve our daily lives.</p>
+                        </div>
+                        <!-- Other sections -->
+                        <div class="button-container">
+                          <p>If you're eager to dive deeper into AI development and connect with fellow learners and experienced developers, consider signing up and joining our community server. In our server, you can chat with experts, get answers to your questions, and share your progress. It's a fantastic opportunity to learn, collaborate, and grow in the world of AI development.</p>
+                          <a href="/login" class="btn">Go to Channels</a>
+                        </div>
+                      </div>
+                    </div>
+          
+                    <!-- Data Science -->
+                    <div class="channel-card data-science section-subtitle" onclick="openModal('dataScienceModal')">
+                      Hey <strong class="strong">Beginner</strong> start with Data Science
+                      <i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
+                    </div>
+          
+                    <div id="dataScienceModal" class="modal">
+                      <div class="modal-content">
+                        <span class="close" onclick="closeModal('dataScienceModal')">&times;</span>
+                        <h1><i class="fas fa-chart-line section-icon"></i> Data Science Overview</h1>
+                        <div class="section">
+                          <h2><i class="fas fa-info-circle section-icon"></i> What is Data Science?</h2>
+                          <p>Data science is an interdisciplinary field that uses scientific methods, processes, algorithms, and systems to extract knowledge and insights from structured and unstructured data. It combines skills from statistics, computer science, and domain expertise to analyze and interpret complex data.</p>
+                        </div>
+                        <div class="section">
+                          <h2><i class="fas fa-code section-icon"></i> Basic Languages and Technologies:</h2>
+          
+                          <h3><i class="fab fa-python section-icon"></i> Python</h3>
+                          <p>
+                            <span class="key-point">Purpose:</span> Python is widely used in data science for data manipulation, analysis, and visualization due to its readability and comprehensive libraries.
+                          </p>
+                          <p>
+                            <span class="key-point">Example:</span> Libraries like Pandas, NumPy, and Matplotlib are essential for data science tasks.
+                          </p>
+          
+                          <h3><i class="fas fa-database section-icon"></i> R</h3>
+                          <p>
+                            <span class="key-point">Purpose:</span> R is a language and environment for statistical computing and graphics, making it highly popular among statisticians and data miners.
+                          </p>
+                          <p>
+                            <span class="key-point">Example:</span> Use R for data visualization with ggplot2 and statistical modeling.
+                          </p>
+          
+                          <h3><i class="fas fa-database section-icon"></i> SQL</h3>
+                          <p>
+                            <span class="key-point">Purpose:</span> SQL is essential for querying and managing data stored in relational databases.
+                          </p>
+                          <p>
+                            <span class="key-point">Example:</span> Use SQL to extract and manipulate data from databases like MySQL, PostgreSQL, and SQLite.
+                          </p>
+                        </div>
+          
+                        <div class="section">
+                          <h2><i class="fas fa-database section-icon"></i> Key Concepts:</h2>
+                          <h3><i class="fas fa-database section-icon"></i> Data Wrangling</h3>
+                          <p>
+                            <span class="key-point">Purpose:</span> Data wrangling involves cleaning and transforming raw data into a more suitable format for analysis.
+                          </p>
+                          <p>
+                            <span class="key-point">Example:</span> Handling missing values, outliers, and data normalization.
+                          </p>
+          
+                          <h3><i class="fas fa-chart-line section-icon"></i> Data Visualization</h3>
+                          <p>
+                            <span class="key-point">Purpose:</span> Data visualization is the graphical representation of data to help understand trends, patterns, and insights.
+                          </p>
+                          <p>
+                            <span class="key-point">Example:</span> Creating charts and plots using Matplotlib, Seaborn, or Tableau.
+                          </p>
+          
+                          <h3><i class="fas fa-robot section-icon"></i> Machine Learning</h3>
+                          <p>
+                            <span class="key-point">Purpose:</span> Machine learning involves using algorithms to build models that can make predictions or decisions based on data.
+                          </p>
+                          <p>
+                            <span class="key-point">Example:</span> Implementing classification, regression, and clustering algorithms.
+                          </p>
+                        </div>
+          
+                        <div class="section">
+                          <h2><i class="fas fa-lightbulb section-icon"></i> Pre-requisite Knowledge:</h2>
+                          <ul>
+                            <li>
+                              <strong>Mathematics:</strong> Understanding of statistics, probability, and linear algebra.
+                            </li>
+                            <li>
+                              <strong>Programming:</strong> Proficiency in programming languages like Python or R.
+                            </li>
+                            <li>
+                              <strong>Data Analysis:</strong> Skills in data manipulation, cleaning, and visualization.
+                            </li>
+                          </ul>
+                        </div>
+          
+                        <div class="section">
+                          <h2><i class="fas fa-cogs section-icon"></i> How Data Science Works:</h2>
+                          <h3><i class="fas fa-project-diagram section-icon"></i> Data Collection</h3>
+                          <p>Gathering data from various sources such as databases, APIs, web scraping, or external datasets.</p>
+                          <p>
+                            <span class="key-point">Example:</span> Using Python libraries like BeautifulSoup for web scraping.
+                          </p>
+          
+                          <h3><i class="fas fa-sync-alt section-icon"></i> Data Analysis and Modeling</h3>
+                          <p>Analyzing data to uncover patterns and insights, and building predictive models using machine learning algorithms.</p>
+                          <p>
+                            <span class="key-point">Example:</span> Using Scikit-learn for implementing machine learning models.
+                          </p>
+          
+                          <h3><i class="fas fa-chart-line section-icon"></i> Data Visualization and Communication</h3>
+                          <p>Visualizing data to present findings and insights clearly to stakeholders. Effective communication of results is crucial for decision-making.</p>
+                          <p>
+                            <span class="key-point">Example:</span> Creating interactive dashboards using tools like Tableau or Power BI.
+                          </p>
+                        </div>
+          
+                        <div class="section">
+                          <h2><i class="fas fa-thumbs-up section-icon"></i> Conclusion</h2>
+                          <p>Data science is a powerful field that enables us to extract valuable insights from data. By mastering data science techniques, you can analyze complex data, build predictive models, and drive data-informed decision-making in various industries.</p>
+                        </div>
+                        <!-- Other sections -->
+                        <div class="button-container">
+                          <p>If you're eager to dive deeper into data science and connect with fellow learners and experienced developers, consider signing up and joining our community server. In our server, you can chat with experts, get answers to your questions, and share your progress. It's a fantastic opportunity to learn, collaborate, and grow in the world of data science.</p>
+                          <a href="/login" class="btn">Go to Channels</a>
+                        </div>
+                      </div>
+                    </div>
+          
+                    <!-- Game Development -->
+                    <div class="channel-card game-dev section-subtitle" onclick="openModal('gameDevModal')">
+                      Hey <strong class="strong">Beginner</strong> start with Game Development
+                      <i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
+                    </div>
+          
+                    <div id="gameDevModal" class="modal">
+                      <div class="modal-content">
+                        <span class="close" onclick="closeModal('gameDevModal')">&times;</span>
+                        <h1><i class="fas fa-gamepad section-icon"></i> Game Development Overview</h1>
+                        <div class="section">
+                          <h2><i class="fas fa-info-circle section-icon"></i> What is Game Development?</h2>
+                          <p>Game development involves creating video games for various platforms using programming, graphic design, and storytelling. It encompasses game design, development, testing, and release, combining artistic and technical skills to produce interactive entertainment.</p>
+                        </div>
+                        <div class="section">
+                          <h2><i class="fas fa-code section-icon"></i> Basic Languages and Technologies:</h2>
+          
+                          <h3><i class="fab fa-unity section-icon"></i> C# (Unity)</h3>
+                          <p>
+                            <span class="key-point">Purpose:</span> C# is the primary language used for scripting in Unity, one of the most popular game development engines.
+                          </p>
+                          <p>
+                            <span class="key-point">Example:</span> Using C# to create gameplay mechanics, user interfaces, and manage game objects in Unity.
+                          </p>
+          
+                          <h3><i class="fab fa-unreal-engine section-icon"></i> C++ (Unreal Engine)</h3>
+                          <p>
+                            <span class="key-point">Purpose:</span> C++ is widely used in Unreal Engine, another leading game development engine, known for its performance and capabilities.
+                          </p>
+                          <p>
+                            <span class="key-point">Example:</span> Implementing game logic, physics, and rendering in Unreal Engine with C++.
+                          </p>
+          
+                          <h3><i class="fab fa-html5 section-icon"></i> HTML5 and JavaScript (Web Games)</h3>
+                          <p>
+                            <span class="key-point">Purpose:</span> HTML5 and JavaScript are used to create browser-based games that run directly in web browsers without the need for plugins.
+                          </p>
+                          <p>
+                            <span class="key-point">Example:</span> Developing interactive web games using libraries like Phaser.js.
+                          </p>
+                        </div>
+          
+                        <div class="section">
+                          <h2><i class="fas fa-database section-icon"></i> Key Concepts:</h2>
+                          <h3><i class="fas fa-puzzle-piece section-icon"></i> Game Design</h3>
+                          <p>
+                            <span class="key-point">Purpose:</span> Game design involves conceptualizing the game's rules, mechanics, story, and user experience.
+                          </p>
+                          <p>
+                            <span class="key-point">Example:</span> Creating a game design document (GDD) that outlines the game's concept, features, and gameplay.
+                          </p>
+          
+                          <h3><i class="fas fa-cogs section-icon"></i> Game Programming</h3>
+                          <p>
+                            <span class="key-point">Purpose:</span> Game programming is the technical implementation of the game's design using code to create the game's logic and functionality.
+                          </p>
+                          <p>
+                            <span class="key-point">Example:</span> Scripting character movements, game physics, and AI behaviors.
+                          </p>
+          
+                          <h3><i class="fas fa-images section-icon"></i> Graphics and Animation</h3>
+                          <p>
+                            <span class="key-point">Purpose:</span> Creating visual elements, animations, and special effects that bring the game world to life.
+                          </p>
+                          <p>
+                            <span class="key-point">Example:</span> Using tools like Blender or Maya for 3D modeling and animation.
+                          </p>
+                        </div>
+          
+                        <div class="section">
+                          <h2><i class="fas fa-lightbulb section-icon"></i> Pre-requisite Knowledge:</h2>
+                          <ul>
+                            <li>
+                              <strong>Programming:</strong> Proficiency in languages like C#, C++, or JavaScript.
+                            </li>
+                            <li>
+                              <strong>Mathematics:</strong> Understanding of geometry, trigonometry, and physics.
+                            </li>
+                            <li>
+                              <strong>Graphic Design:</strong> Skills in graphic design and animation tools.
+                            </li>
+                          </ul>
+                        </div>
+          
+                        <div class="section">
+                          <h2><i class="fas fa-cogs section-icon"></i> How Game Development Works:</h2>
+                          <h3><i class="fas fa-project-diagram section-icon"></i> Game Design and Prototyping</h3>
+                          <p>Creating initial concepts, designing gameplay mechanics, and building prototypes to test ideas.</p>
+                          <p>
+                            <span class="key-point">Example:</span> Using Unity to create a basic prototype of a platformer game.
+                          </p>
+          
+                          <h3><i class="fas fa-cogs section-icon"></i> Development and Testing</h3>
+                          <p>Implementing the game's features, programming the logic, and continuously testing to ensure functionality and fix bugs.</p>
+                          <p>
+                            <span class="key-point">Example:</span> Iterative development cycles and playtesting to refine gameplay.
+                          </p>
+          
+                          <h3><i class="fas fa-rocket section-icon"></i> Deployment and Marketing</h3>
+                          <p>Releasing the game on various platforms, promoting it to reach the target audience, and providing updates and support post-launch.</p>
+                          <p>
+                            <span class="key-point">Example:</span> Publishing a game on Steam or app stores and using social media for marketing.
+                          </p>
+                        </div>
+          
+                        <div class="section">
+                          <h2><i class="fas fa-thumbs-up section-icon"></i> Conclusion</h2>
+                          <p>Game development is a dynamic and creative field that blends technology and art to create interactive entertainment. By mastering game development skills, you can bring your imaginative concepts to life and captivate players worldwide.</p>
+                        </div>
+                        <!-- Other sections -->
+                        <div class="button-container">
+                          <p>If you're eager to dive deeper into game development and connect with fellow learners and experienced developers, consider signing up and joining our community server. In our server, you can chat with experts, get answers to your questions, and share your progress. It's a fantastic opportunity to learn, collaborate, and grow in the world of game development.</p>
+                          <a href="/login" class="btn">Go to Channels</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+          
 
     {% comment %} Chatbot {% endcomment %}
 
@@ -129,264 +590,5 @@
       </div>
     </article>
   </main>
-  <script src="/static/js'script.js"></script>
+  <script src="/static/js/script.js"></script>
 {% endblock %}
-=======
-        <section class="section beg" aria-label="beg post">
-            <div class="container">
-                <div class="channel-card frontend section-subtitle" onclick="openModal('frontendModal')">
-                    Hey <strong class="strong">Beigneer</strong> start with this 
-                    <i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
-
-        <div id="frontendModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('frontendModal')">&times;</span>
-                <h1><i class="fas fa-laptop-code section-icon"></i> Frontend Development Overview</h1>
-                <div class="section">
-                    <h2><i class="fas fa-info-circle section-icon"></i> What is Frontend Development?</h2>
-                    <p>Frontend development focuses on the client-side of web applications, involving everything that users interact with directly in their browsers. It includes the structure, design, behavior, and content of everything that appears on web browsers, using technologies like HTML, CSS, and JavaScript.</p>
-                </div>
-                <div class="section">
-                    <h2><i class="fas fa-code section-icon"></i> Basic Languages and Technologies:</h2>
-        
-                    <h3><i class="fab fa-html5 section-icon"></i> HTML</h3>
-                    <p><span class="key-point">Purpose:</span> HTML provides the basic structure of web pages.</p>
-                    <p><span class="key-point">Example:</span> Using HTML to create a form: <code>&lt;form&gt;...&lt;/form&gt;</code></p>
-        
-                    <h3><i class="fab fa-css3 section-icon"></i> CSS</h3>
-                    <p><span class="key-point">Purpose:</span> CSS is used for styling and layout of web pages.</p>
-                    <p><span class="key-point">Example:</span> Using CSS to style a button: <code>button { background-color: blue; }</code></p>
-        
-                    <h3><i class="fab fa-js section-icon"></i> JavaScript</h3>
-                    <p><span class="key-point">Purpose:</span> JavaScript is used to make web pages interactive.</p>
-                    <p><span class="key-point">Example:</span> Using JavaScript to create an alert: <code>alert('Hello World');</code></p>
-                </div>
-        
-                <div class="section">
-                    <h2><i class="fas fa-lightbulb section-icon"></i> Pre-requisite Knowledge:</h2>
-                    <ul>
-                        <li><strong>HTML and CSS:</strong> Fundamental understanding of HTML for structure and CSS for styling.</li>
-                        <li><strong>JavaScript Basics:</strong> Basic knowledge of JavaScript for interactivity.</li>
-                        <li><strong>Responsive Design:</strong> Understanding of how to create layouts that work on various screen sizes.</li>
-                    </ul>
-                </div>
-        
-                <div class="section">
-                    <h2><i class="fas fa-cogs section-icon"></i> How Frontend Development Works:</h2>
-                    <h3><i class="fas fa-code section-icon"></i> HTML for Structure</h3>
-                    <p>HTML is used to structure content on the web.</p>
-                    <p><span class="key-point">Example:</span> Creating a basic HTML document: <code>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;...&lt;/body&gt;&lt;/html&gt;</code></p>
-        
-                    <h3><i class="fas fa-paint-brush section-icon"></i> CSS for Styling</h3>
-                    <p>CSS is used to style and layout web pages.</p>
-                    <p><span class="key-point">Example:</span> Using CSS to change text color: <code>h1 { color: red; }</code></p>
-        
-                    <h3><i class="fas fa-mouse-pointer section-icon"></i> JavaScript for Interactivity</h3>
-                    <p>JavaScript is used to add interactivity to web pages.</p>
-                    <p><span class="key-point">Example:</span> Adding a click event to a button: <code>document.querySelector('button').onclick = function() { ... };</code></p>
-        
-                    <h3><i class="fas fa-mobile-alt section-icon"></i> Responsive Design</h3>
-                    <p>Creating layouts that work well on different screen sizes using CSS media queries.</p>
-                    <p><span class="key-point">Example:</span> Using a media query: <code>@media (max-width: 600px) { ... }</code></p>
-                </div>
-        
-                <div class="section">
-                    <h2><i class="fas fa-thumbs-up section-icon"></i> Conclusion</h2>
-                    <p>Frontend development is crucial for creating the visual and interactive aspects of web applications. By mastering HTML, CSS, and JavaScript, you can build engaging and responsive user interfaces that enhance the user experience.</p>
-                </div>
-        
-                <div class="button-container">
-                    <p>If you're eager to dive deeper into frontend development and connect with fellow learners and experienced developers, consider signing up and joining our community server. In our server, you can chat with experts, get answers to your questions, and share your progress. It's a fantastic opportunity to learn, collaborate, and grow in the world of frontend development.</p>
-                    <a href="/login" class="btn">Go to Channels</a>
-                </div>
-            </div>
-        </div>
-        <div id="backendModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('backendModal')">&times;</span>
-                <h1><i class="fas fa-server section-icon"></i> Backend Development Overview</h1>
-                <div class="section">
-                    <h2><i class="fas fa-info-circle section-icon"></i> What is Backend Development?</h2>
-                    <p>Backend development, also known as server-side development, focuses on the server side of web applications. It involves creating and maintaining the core functional logic, databases, APIs, and servers that power the application. Backend developers ensure that the data or services requested by the frontend system or software are delivered through programmatic means.</p>
-                </div>
-                <div class="section">
-                    <h2><i class="fas fa-code section-icon"></i> Basic Languages and Technologies:</h2>
-        
-                    <h3><i class="fab fa-python section-icon"></i> Python</h3>
-                    <p><span class="key-point">Purpose:</span> Python is a versatile language often used in backend development due to its simplicity and powerful libraries.</p>
-                    <p><span class="key-point">Example:</span> Django and Flask are popular Python frameworks for building web applications and APIs.</p>
-        
-                    <h3><i class="fab fa-java section-icon"></i> Java</h3>
-                    <p><span class="key-point">Purpose:</span> Java is known for its "write once, run anywhere" capability and is widely used in enterprise-level backend systems.</p>
-                    <p><span class="key-point">Example:</span> Spring is a popular Java framework used for creating robust backend applications.</p>
-        
-                    <h3><i class="fab fa-node-js section-icon"></i> Node.js</h3>
-                    <p><span class="key-point">Purpose:</span> Node.js allows developers to use JavaScript on the server-side, providing a unified language across the stack.</p>
-                    <p><span class="key-point">Example:</span> Express.js is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.</p>
-                </div>
-        
-                <div class="section">
-                    <h2><i class="fas fa-lightbulb section-icon"></i> Pre-requisite Knowledge:</h2>
-                    <ul>
-                        <li><strong>Database Management:</strong> Understanding of database systems (SQL and NoSQL) and how to interact with them.</li>
-                        <li><strong>API Development:</strong> Knowledge of how to create and consume APIs, including RESTful services.</li>
-                        <li><strong>Server Management:</strong> Basic understanding of server architecture and deployment processes.</li>
-                    </ul>
-                </div>
-        
-                <div class="section">
-                    <h2><i class="fas fa-cogs section-icon"></i> How Backend Development Works:</h2>
-                    <h3><i class="fas fa-database section-icon"></i> Data Storage and Management</h3>
-                    <p>Backend developers work with databases to store, retrieve, and manage data efficiently.</p>
-                    <p><span class="key-point">Example:</span> Using SQL to query a database: <code>SELECT * FROM users WHERE age > 18;</code></p>
-        
-                    <h3><i class="fas fa-exchange-alt section-icon"></i> API Development</h3>
-                    <p>Creating APIs that allow the frontend to communicate with the backend, often following RESTful principles.</p>
-                    <p><span class="key-point">Example:</span> Defining an API endpoint in Express.js: <code>app.get('/api/users', (req, res) => { ... });</code></p>
-        
-                    <h3><i class="fas fa-shield-alt section-icon"></i> Server-side Logic and Security</h3>
-                    <p>Implementing business logic, authentication, and authorization on the server to ensure data integrity and security.</p>
-                    <p><span class="key-point">Example:</span> Implementing JWT authentication to secure API endpoints.</p>
-        
-                    <h3><i class="fas fa-tachometer-alt section-icon"></i> Performance Optimization</h3>
-                    <p>Optimizing server performance, handling concurrent requests, and managing server resources efficiently.</p>
-                    <p><span class="key-point">Example:</span> Implementing caching mechanisms to reduce database load and improve response times.</p>
-                </div>
-        
-                <div class="section">
-                    <h2><i class="fas fa-thumbs-up section-icon"></i> Conclusion</h2>
-                    <p>Backend development is crucial for creating the core functionality of web applications. By mastering server-side languages, database management, and API development, you can build scalable, secure, and efficient web services. This forms the foundation of robust web applications and enables seamless interaction between the user interface and the server.</p>
-                </div>
-        
-                <div class="button-container">
-                    <p>If you're eager to dive deeper into backend development and connect with fellow learners and experienced developers, consider signing up and joining our community server. In our server, you can chat with experts, get answers to your questions, and share your progress. It's a fantastic opportunity to learn, collaborate, and grow in the world of backend development.</p>
-                    <a href="/login" class="btn">Go to Channels</a>
-                </div>
-            </div>
-        </div>
-        <div id="datascienceModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('datascienceModal')">&times;</span>
-                <h1><i class="fas fa-chart-line section-icon"></i> Data Science Overview</h1>
-                <div class="section">
-                    <h2><i class="fas fa-info-circle section-icon"></i> What is Data Science?</h2>
-                    <p>Data Science involves extracting insights and knowledge from data using scientific methods, processes, algorithms, and systems. It combines statistics, mathematics, programming, and domain expertise to analyze and interpret complex data.</p>
-                </div>
-                <div class="section">
-                    <h2><i class="fas fa-code section-icon"></i> Basic Languages and Technologies:</h2>
-        
-                    <h3><i class="fab fa-python section-icon"></i> Python</h3>
-                    <p><span class="key-point">Purpose:</span> Python is widely used in data science for data analysis, visualization, and machine learning.</p>
-                    <p><span class="key-point">Example:</span> Using Pandas for data manipulation: <code>import pandas as pd; df = pd.read_csv('data.csv');</code></p>
-        
-                    <h3><i class="fas fa-database section-icon"></i> SQL</h3>
-                    <p><span class="key-point">Purpose:</span> SQL is used for querying and managing relational databases.</p>
-                    <p><span class="key-point">Example:</span> Selecting data from a table: <code>SELECT * FROM sales WHERE year = 2023;</code></p>
-        
-                    <h3><i class="fab fa-r-project section-icon"></i> R</h3>
-                    <p><span class="key-point">Purpose:</span> R is a programming language and software environment used for statistical computing and graphics.</p>
-                    <p><span class="key-point">Example:</span> Creating a plot in R: <code>plot(x, y)</code></p>
-                </div>
-        
-                <div class="section">
-                    <h2><i class="fas fa-lightbulb section-icon"></i> Pre-requisite Knowledge:</h2>
-                    <ul>
-                        <li><strong>Statistics and Mathematics:</strong> Understanding of statistical methods and mathematical concepts.</li>
-                        <li><strong>Programming:</strong> Proficiency in programming languages like Python or R.</li>
-                        <li><strong>Data Manipulation:</strong> Skills in manipulating and analyzing data using tools like Pandas or SQL.</li>
-                    </ul>
-                </div>
-        
-                <div class="section">
-                    <h2><i class="fas fa-cogs section-icon"></i> How Data Science Works:</h2>
-                    <h3><i class="fas fa-database section-icon"></i> Data Collection</h3>
-                    <p>Gathering data from various sources such as databases, APIs, or web scraping.</p>
-                    <p><span class="key-point">Example:</span> Using an API to fetch data: <code>requests.get('https://api.example.com/data')</code></p>
-        
-                    <h3><i class="fas fa-filter section-icon"></i> Data Cleaning and Preparation</h3>
-                    <p>Cleaning and transforming data to make it suitable for analysis.</p>
-                    <p><span class="key-point">Example:</span> Removing missing values in Pandas: <code>df.dropna()</code></p>
-        
-                    <h3><i class="fas fa-chart-pie section-icon"></i> Data Analysis and Visualization</h3>
-                    <p>Analyzing data to uncover patterns and insights, and visualizing the results.</p>
-                    <p><span class="key-point">Example:</span> Creating a plot in Matplotlib: <code>plt.plot(x, y)</code></p>
-        
-                    <h3><i class="fas fa-brain section-icon"></i> Machine Learning</h3>
-                    <p>Applying machine learning algorithms to make predictions or classify data.</p>
-                    <p><span class="key-point">Example:</span> Training a model with scikit-learn: <code>model.fit(X_train, y_train)</code></p>
-                </div>
-        
-                <div class="section">
-                    <h2><i class="fas fa-thumbs-up section-icon"></i> Conclusion</h2>
-                    <p>Data Science is a powerful field that enables organizations to make data-driven decisions. By mastering data analysis, visualization, and machine learning, you can uncover valuable insights and drive impactful business outcomes.</p>
-                </div>
-        
-                <div class="button-container">
-                    <p>If you're eager to dive deeper into data science and connect with fellow learners and experienced professionals, consider signing up and joining our community server. In our server, you can chat with experts, get answers to your questions, and share your progress. It's a fantastic opportunity to learn, collaborate, and grow in the world of data science.</p>
-                    <a href="/login" class="btn">Go to Channels</a>
-                </div>
-            </div>
-        </div>
-        <div id="gamedevModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('gamedevModal')">&times;</span>
-                <h1><i class="fas fa-gamepad section-icon"></i> Game Development Overview</h1>
-                <div class="section">
-                    <h2><i class="fas fa-info-circle section-icon"></i> What is Game Development?</h2>
-                    <p>Game development is the process of creating video games. It involves design, programming, art, and sound to create interactive entertainment experiences for various platforms such as PCs, consoles, and mobile devices.</p>
-                </div>
-                <div class="section">
-                    <h2><i class="fas fa-code section-icon"></i> Basic Languages and Technologies:</h2>
-        
-                    <h3><i class="fab fa-unity section-icon"></i> Unity</h3>
-                    <p><span class="key-point">Purpose:</span> Unity is a popular game development engine that supports 2D and 3D game creation.</p>
-                    <p><span class="key-point">Example:</span> Creating a simple game in Unity: <code>void Update() { ... }</code></p>
-        
-                    <h3><i class="fab fa-unreal-engine section-icon"></i> Unreal Engine</h3>
-                    <p><span class="key-point">Purpose:</span> Unreal Engine is a powerful game engine known for high-quality graphics and performance.</p>
-                    <p><span class="key-point">Example:</span> Using Blueprints in Unreal Engine to create game logic.</p>
-        
-                    <h3><i class="fab fa-python section-icon"></i> Python</h3>
-                    <p><span class="key-point">Purpose:</span> Python is used in game development for scripting and automation.</p>
-                    <p><span class="key-point">Example:</span> Using Pygame for creating simple 2D games: <code>import pygame; pygame.init()</code></p>
-                </div>
-        
-                <div class="section">
-                    <h2><i class="fas fa-lightbulb section-icon"></i> Pre-requisite Knowledge:</h2>
-                   
-                                
-    </article>
-</main>
-<script src="/static/js'script.js"></script>
-
-<footer>
-    <div class="footerCoontainer">
-        <div class="socialIcons">
-            <a href=""><i class="fa-brands fa-facebook"></i></a>
-            <a href=""><i class="fa-brands fa-x-twitter"></i></a>
-            <a href=""><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://github.com/dpshah23/Any-Time-Event"><i class="fa-brands fa-github"></i></a>
-        </div>
-
-        <div class="footerNav">
-            <ul>
-                <li><a href="/">HOME</a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="footerBottom">
-        <a href="/templates/terms_and_conditions.html">Terms & Conditions</a> | <a href="/templates/privacy_policy.html">Privacy Policy</a>
-       
-        <p>
-            CopyRight &copy;2024; Designed by
-            <span class="designer">ANY TIME EVENT TEAM</span>
-        </p>
-    </div>
-</footer>
-
-{% endblock body %}
->>>>>>> 5e4be968f1ee2b48c0d99e63d0159f5fa776f430
