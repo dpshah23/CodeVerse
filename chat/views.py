@@ -6,6 +6,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.middleware.csrf import get_token
 
 
+
 # Create your views here.
 def dispall(request):
     if 'username' and 'email' not in request.session:
