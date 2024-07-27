@@ -78,7 +78,34 @@ def signup( request):
 
 def user_details(request , user_id):
     if request.method == "POST":
-        pass
+        email = Users_main.objects.get(user_id=user_id).email
+        phone = request.POST.get( 'phone' )
+        city = request.POST.get( 'city' )
+        qualifications = request.POST.get( 'qualifications' )
+        profile_pic = request.POST.get('profile_pic')
+        dob = request.POST.get( 'dob' )
+        bio = request.POST.get( 'bio' )
+        level = request.POST.get('level')
+
+
+        obj, created = Users_main.objects.update_or_create(
+            email=email,
+            defaults={
+                'phone' : phone ,
+                'city' : city ,
+                'qualification' : qualifications ,
+                'profile_pic' : profile_pic ,
+                'dob' : dob ,
+                'bio' : bio ,
+                'is_active' : True , 
+                'level' : level 
+                
+            }
+        )
+        return render( request , 'login.html')
+    return render (request , 'user_details.html')
+
+
 
 @ratelimit(key='ip', rate='10/m')
 def reset(request):
