@@ -232,13 +232,17 @@ def edit_profile(request , username):
 def quiz_ans_inter(request,username):
     if request.method=="POST":
         q1=request.POST.get('q1')
+        que1=Quiz.objects.get(id=q1).question
         a1=request.POST.get('ans1')
         q2=request.POST.get('q2')
+        que2=Quiz.objects.get(id=q2).question
         a2=request.POST.get('ans2')
         q3=request.POST.get('q3')
+        que3=Quiz.objects.get(id=q3).question
         a3=request.POST.get('ans3')
+
         tech = Users_main.objects.get(username=username).tech
-        question=f"""I am Currently a student of computer engineering in {tech} feild and i want to ask you if the ans i give to the questions i tell you are intermediate level or not que 1 : {q1} and ans 1 : {a1} , que 2 : {q2} and ans 2 : {a2} , que 3 : {q3} ans ans 3 :{a3} . give the answer in yes or no only """
+        question=f"""I am Currently a student of computer engineering in {tech} feild and i want to ask you if the ans i give to the questions i tell you are intermediate level or not que 1 : {que1} and ans 1 : {a1} , que 2 : {que2} and ans 2 : {a2} , que 3 : {que3} ans ans 3 :{a3} . give the answer in yes or no only """
 
         api_key=os.getenv('API_KEY_GEMINI')
 
