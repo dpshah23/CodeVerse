@@ -7,27 +7,28 @@
   font-family: "Poppins", sans-serif;
 }
 
-body {
-  height: 100vh;
-  width: 100vw;
+.login-body {
+  height: 77vh;
+  width: 90vw;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 30px;
-  background-color: rgb(231, 231, 231);
+  top: -28px
 }
 
-.container {
+.login-container {
   height: 600px;
   width: 500px;
   background-color: white;
   box-shadow: 10px 10px 30px rgb(128, 128, 128);
   position: relative;
   overflow: hidden;
+  
 }
 
-.btn {
+.login-btn {
   height: 60px;
   width: 300px;
   margin: 18px auto;
@@ -38,8 +39,8 @@ body {
   align-items: center;
 }
 
-.login,
-.signup {
+.login-login,
+.login-signup {
   font-size: 22px;
   border: none;
   outline: none;
@@ -48,7 +49,7 @@ body {
   cursor: pointer;
 }
 
-.slider {
+.login-slider {
   height: 60px;
   width: 150px;
   border-radius: 50px;
@@ -58,16 +59,16 @@ body {
     rgb(255, 146, 91)
   );
   position: absolute;
-  top: 38px;
-  left: 90px;
+  top: 19px;
+  left: 100px;
   transition: all 0.5s ease-in-out;
 }
 
-.moveslider {
-  left: 245px;
+.login-moveslider {
+  left: 250px;
 }
 
-.form-section {
+.login-form-section {
   height: 500px;
   width: 1000px;
   padding: 20px 0;
@@ -77,12 +78,12 @@ body {
   left: 0px;
 }
 
-.form-section-move {
+.login-form-section-move {
   left: -500px;
 }
 
-.login-box,
-.signup-box {
+.login-login-box,
+.login-signup-box {
   height: 100%;
   width: 500px;
   display: flex;
@@ -92,19 +93,19 @@ body {
   padding: 0px 40px;
 }
 
-.login-box {
+.login-login-box {
   gap: 50px;
-  margin-top: -1rem;
+  margin: -4rem 25px;
   width: 450px;
 }
 
-.signup-box {
+.login-signup-box {
   gap: 30px;
   width: 600px;
 }
 
 .ele {
-  height: 55px;
+  height: 60px;
   width: 400px;
   outline: none;
   border: none;

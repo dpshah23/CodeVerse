@@ -5,3 +5,5 @@ python-dotenv
 mysqlclient
 django-jazzmin
 google-generativeai
+django-ratelimit
+pillow
