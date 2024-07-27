@@ -265,3 +265,9 @@ def quiz_ans_inter(request,username):
             print(e)
             username=request.sesson['username']
             return redirect(f'/quiz/{username}')
+        
+def terms(request):
+    return render (request,'terms_and_conditions.html')
+
+def privacy(request):
+    return render (request , 'privacy_policy.html')
