@@ -153,7 +153,7 @@ def api_reply(request):
 
             response = model.generate_content(question)
 
-            return HttpResponse({'data':response.text})
+            return HttpResponse({'answer':response.text})
 
         except Exception as e:
             print(e)
