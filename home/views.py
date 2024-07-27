@@ -8,8 +8,9 @@ from django.contrib import messages
 import json
 import google.generativeai as genai
 from dotenv import load_dotenv
-import os
+import os 
 from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
 import base64
 
 
@@ -151,19 +152,19 @@ def api_reply(request):
             genai.configure(api_key=api_key)
 
             model = genai.GenerativeModel('gemini-pro')
-
+            question+="do not add other extra special symbols and remove all astric signs and give the response under 100 words and humanize it "
             response = model.generate_content(question)
-
-            return HttpResponse({'answer':response.text})
+            print(response)
+            return JsonResponse({'answer': response.text})
 
         except Exception as e:
             print(e)
-            return HttpResponse({'error':False})
+            return JsonResponse({'error': str(e)}, status=500)
         
 def profile(request , username):
     if 'email' not in request.session:
         messages.error(request,"You are not logged in")
-        return redirect('/')
+        return redirect('/') 
     
     try :
         user = Users_main.objects.get(username=username)

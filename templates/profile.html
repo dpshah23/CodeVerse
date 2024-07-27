@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/static/images/final_fav.ico">
+    <title>{{ user.username }}'s Profile | Code Verse</title>
+    <link rel="stylesheet" href="/static/css/navbar.css">
+    <link rel="stylesheet" href="/static/css/profile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/36d72e7e2f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-header">
+            <img src="data:image/png;base64,{{ user.profile_pic }}" alt="{{ user.username }}'s profile picture" class="profile-pic">
+            <h1 class="profile-name">{{ user.name }}</h1>
+            <p class="profile-username">@{{ user.username }}</p>
+        </div>
+        <div class="profile-details">
+            <h2>Bio</h2>
+            <p>{{ user.bio }}</p>
+            <h2>Details</h2>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+            <p><strong>Phone:</strong> {{ user.phone }}</p>
+            <p><strong>City:</strong> {{ user.city }}</p>
+            <p><strong>Qualification:</strong> {{ user.qualification }}</p>
+            <p><strong>Date of Birth:</strong> {{ user.dob }}</p>
+            <p><strong>Description:</strong> {{ user.description }}</p>
+        </div>
+    </div>
+</body>
+</html>

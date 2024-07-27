@@ -349,18 +349,23 @@
 
     {% comment %} Chatbot {% endcomment %}
 
-      <div class="chatbot-icon" onclick="toggleChatbot()">💬</div>
+    <div class="chatbot-icon" onclick="toggleChatbot()">💬</div>
 
-      <div class="chatbot-container" id="chatbotContainer">
+    <div class="chatbot-container" id="chatbotContainer">
         <div class="chatbot-header">Chatbot</div>
         <div class="chatbot-messages" id="chatbotMessages"></div>
         <div class="chatbot-input-container">
-          <input type="text" id="chatbotInput" class="chatbot-input" placeholder="Ask me anything..." />
-          <button class="send-button" onclick="sendMessage()">Send</button>
+            <input type="text" id="chatbotInput" class="chatbot-input" placeholder="Ask me anything..." />
+            <button class="send-button" onclick="sendMessage()">Send</button>
         </div>
+    </div>
+    
       </div>
     </article>
   </main>
+<<<<<<< HEAD
+ 
+=======
 
   <footer>
     <div class="footerCoontainer">
@@ -392,4 +397,5 @@
 </footer>
 
   <script src="/static/js/script.js"></script>
+>>>>>>> e1d9e73e3081a0c9e2ce7309c57929e12dff12b6
 {% endblock %}

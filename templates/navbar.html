@@ -60,10 +60,12 @@
               <a href="/channels/" class="navbar-link hover:underline" data-nav-link>Channels</a>
             </li>
             {%endif%}
-  
+            {% if 'email' not in request.session %}
+            {% else %}
             <li class="navbar-item">
-              <a href="/templates/blogs.html" class="navbar-link hover:underline" data-nav-link>Blogs</a>
+              <a href="/profile/{{request.session.username}}" class="navbar-link hover:underline" data-nav-link>Profile</a>
             </li>
+            {% endif %}
             {% if not request.session.email == email %}
             <li class="navbar-item">
               <a href="/auth/logout/" class="navbar-link hover:underline" data-nav-link>Logout</a>
