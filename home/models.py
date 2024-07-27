@@ -41,7 +41,18 @@ class Quiz(models.Model):
     
     def _str_(self):
         return self.question
+
+
+tech=(
+    ("FRONTEND","frontend"),
+    ("BACKEND","backend"),
+    ("MOBILEAPP","mobileapp"),
+    ("DATA SCIENCE","datascience"),
+    ("ARTIFICIAL INTELLIGENCE/MACHINE LEARNING","ai/ml"),
+    ("GAME DEVELOPMENT","gamedev")
     
+)
+
 class Blog(models.Model):
     author = models.CharField(max_length=100)
     blog_id = models.CharField(max_length=100)
@@ -59,6 +70,7 @@ class Blog(models.Model):
     keyword2 = models.CharField(max_length= 100 , blank=True)
     keyword3 = models.CharField(max_length= 100 , blank=True)
     time_stamp = models.DateField()
+    tech=models.CharField(max_length=150,choices=tech,blank=True,null=True)
     
     def __str__(self):
         return self.head_title

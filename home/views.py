@@ -83,7 +83,7 @@ def channels(request):
     return render(request,"channels.html")
         
         
-def blog(request , blog_id):
+def blog_disp(request , blog_id):
     
     try :
         author = Blog.objects.get(blog_id=blog_id).author
@@ -128,3 +128,6 @@ def blog(request , blog_id):
     except Exception as e :
         print(e)
         return redirect('/')
+    
+def all_blogs(request):
+    pass
