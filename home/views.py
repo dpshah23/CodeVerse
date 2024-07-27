@@ -10,6 +10,7 @@ import google.generativeai as genai
 from dotenv import load_dotenv
 import os
 from django.views.decorators.csrf import csrf_exempt
+import base64
 
 
 # Create your views here.
@@ -171,3 +172,57 @@ def profile(request , username):
         messages.error ("Account Does't Exists")
 
     return render(request,"profile.html",{'user':user})
+
+def edit_profile(request , username):
+    if 'email' not in request.session :
+        messages.error("You are not logged in .")
+        return redirect('/')
+    try :
+        id = Users_main.objects.get(username=username)
+        if request.method=="POST":
+
+            if 'profile_picture' in request.FILES:
+                image_file = request.FILES['profile_picture']
+                valid_extensions = ['jpg', 'png', 'jpeg', 'heic']
+                if image_file.name.split('.')[-1].lower() not in valid_extensions:
+                    messages.error(request, 'Invalid Image format. Only JPG, PNG, JPEG, and HEIC are allowed.')
+                    return render(request, 'edit_profile.html', {'id': id})
+
+                image_data = image_file.read()
+                profile_pic = base64.b64encode(image_data).decode('utf-8')
+            else:
+                profile_pic = id.profile_pic 
+
+                phone = request.POST.get( 'phone' )
+                city = request.POST.get( 'city' )
+                qualifications = request.POST.get( 'qualifications' )
+                dob = request.POST.get( 'dob' )
+                bio = request.POST.get( 'bio' )
+                description = request.POST.get('description')
+                level = request.POST.get('level')
+                tech = request.POST.get('tech')
+
+                obj, created = Users_main.objects.update_or_create(
+                    username= username , 
+                    defaults={
+                        'profile_pic' : profile_pic,
+                        'phone' : phone ,
+                        'city' : city,
+                        'qualifications': qualifications,
+                        'dob' : dob ,
+                        'bio'  : bio ,
+                        'description':description,
+                        'level' : level,
+                        'tech' : tech
+
+
+                        }
+                )
+
+                messages.success(request,'Volunteer Details Updated Successfully')
+                return redirect(f'/profile/<username>/')
+    except Users_main.DoesNotExist :
+        messages.error("account doesn't exists")
+        return redirect ('/')
+    except Exception as e :
+        print(e)
