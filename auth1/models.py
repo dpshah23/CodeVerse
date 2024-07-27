@@ -35,7 +35,6 @@ class Users_main(models.Model):
     phone = models.CharField(max_length=100,null=True)
     city = models.CharField(max_length=50,null=True)
     qualification = models.CharField(max_length=100,null=True)
-    experience = models.CharField(max_length= 100 , null = True)
     profile_pic = models.TextField(null=True)
     dob = models.DateField(null=True)
     bio = models.TextField(null=True)
