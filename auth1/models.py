@@ -27,26 +27,27 @@ tech=(
 )
 
 class Users_main(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100,null=True)
     username=models.CharField(max_length=100,unique=True)
     email = models.EmailField(max_length=100)
     password = models.CharField(max_length=100)
     user_id = models.CharField(max_length=50)
-    phone = models.CharField(max_length=100)
-    city = models.CharField(max_length=50)
-    qualification = models.CharField(max_length=100)
-    profile_pic = models.TextField()
-    dob = models.DateField()
-    bio = models.TextField()
-    desciption = models.TextField()
+    phone = models.CharField(max_length=100,null=True)
+    city = models.CharField(max_length=50,null=True)
+    qualification = models.CharField(max_length=100,null=True)
+    profile_pic = models.TextField(null=True)
+    dob = models.DateField(null=True)
+    bio = models.TextField(null=True)
+    description = models.TextField(null=True)
     time_stamp = models.DateField()
     is_active = models.BooleanField(default=True)
-    level = models.CharField(max_length=50,choices=levels,blank=True)
-    tech=models.CharField(max_length=150,choices=tech,blank=True)
+    level = models.CharField(max_length=50,choices=levels,blank=True,null=True)
+    tech=models.CharField(max_length=150,choices=tech,blank=True,null=True
+                          )
     
     
-    def _str_(self):
-        return self.name
+    def __str__(self):
+        return self.username
     
     def set_password(self, raw_password):
         self.password = make_password(raw_password)

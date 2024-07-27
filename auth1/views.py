@@ -18,7 +18,7 @@ from django_ratelimit.decorators import ratelimit
 from PIL import Image, ImageDraw, ImageFont
 import io
 import base64
-
+from datetime import datetime
 
 # Create your views here.
 
@@ -30,19 +30,24 @@ def login(request):
         try:
             user=Users_main.objects.get(email=email)
 
-            if not user.isactive:
+            if not user.is_active:
                 messages.error(request,"Some Unusual Activity Happend in your account . So We have Blocked Your Account")
                 return render(request,"login.html")
             
             islogin=user.check_password(password)
             if user.email==email and islogin:
-                
+                print("login done")
                 request.session['username']=user.username
                 request.session['email']=user.email
                 request.session['name']=user.name
                 request.session['id']=user.user_id
 
-                return redirect('/')
+                print(request.session['email'])
+                print(request.session['username'])
+                print(request.session['id'])
+                print(request.session['name'])
+
+                return redirect('/',{"email":request.session['email'],"username":request.session['username']})
 
             else:
                 messages.error(request,"Incorrect Password ....")
@@ -72,7 +77,7 @@ def signup( request):
         obj = Users_main(username = username , email=email ,user_id = user_id  , name = None , phone = None , city = None , qualification =None , profile_pic = profile_pic , dob = None , bio = None , description = None , time_stamp = time_stamp , is_active = False , level = None , tech = None)
         obj.set_password(password)
         obj.save()
-        return redirect('user_details/<user_id>/')
+        return redirect(f'user_details/{user_id}/')
 
     return render (request , 'login.html')
 
@@ -282,3 +287,13 @@ def reset_pass(request):
 
     return render(request, 'Reset_Password.html')
 
+
+def logout(request):
+
+    if 'email' and 'username' and 'id' in request.session:
+        request.session.pop('email')
+        request.session.pop('username')
+        request.session.pop('id')
+        request.session.flush()
+
+        return redirect('/')
