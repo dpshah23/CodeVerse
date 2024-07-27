@@ -36,13 +36,18 @@ def login(request):
             
             islogin=user.check_password(password)
             if user.email==email and islogin:
-                
+                print("login done")
                 request.session['username']=user.username
                 request.session['email']=user.email
                 request.session['name']=user.name
                 request.session['id']=user.user_id
 
-                return redirect('/')
+                print(request.session['email'])
+                print(request.session['username'])
+                print(request.session['id'])
+                print(request.session['name'])
+
+                return redirect('/',{"email":request.session['email'],"username":request.session['username']})
 
             else:
                 messages.error(request,"Incorrect Password ....")
@@ -282,3 +287,13 @@ def reset_pass(request):
 
     return render(request, 'Reset_Password.html')
 
+
+def logout(request):
+
+    if 'email' and 'username' and 'id' in request.session:
+        request.session.pop('email')
+        request.session.pop('username')
+        request.session.pop('id')
+        request.session.flush()
+
+        return redirect('/')

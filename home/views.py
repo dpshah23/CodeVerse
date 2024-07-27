@@ -78,4 +78,7 @@ def quiz_ans_beg(request):
         
             return render(request,"get_score.html",{'score':len(final_ans)}) 
         
+def channels(request):
+    return render(request,"channels.html")
+        
         

@@ -8,13 +8,13 @@ from django.middleware.csrf import get_token
 
 # Create your views here.
 def dispall(request):
-    if 'email' and 'username' not in request.session:
+    if 'username' and 'email' not in request.session:
         messages.error(request,"Login Required")
         return redirect('/auth/login')
     
     try:
         userisactive=Users_main.objects.get(username=request.session['username'])
-        if userisactive.is_active:
+        if not userisactive.is_active:
             messages.error(request,"Some Unusual Activity Happend in your account . So We have Blocked Your Account")
             return redirect('/auth/login')
     except Users_main.DoesNotExist:
