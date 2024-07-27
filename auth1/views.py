@@ -18,7 +18,7 @@ from django_ratelimit.decorators import ratelimit
 from PIL import Image, ImageDraw, ImageFont
 import io
 import base64
-
+from datetime import datetime
 
 # Create your views here.
 
@@ -30,7 +30,7 @@ def login(request):
         try:
             user=Users_main.objects.get(email=email)
 
-            if not user.isactive:
+            if not user.is_active:
                 messages.error(request,"Some Unusual Activity Happend in your account . So We have Blocked Your Account")
                 return render(request,"login.html")
             
@@ -72,7 +72,7 @@ def signup( request):
         obj = Users_main(username = username , email=email ,user_id = user_id  , name = None , phone = None , city = None , qualification =None , profile_pic = profile_pic , dob = None , bio = None , description = None , time_stamp = time_stamp , is_active = False , level = None , tech = None)
         obj.set_password(password)
         obj.save()
-        return redirect('user_details/<user_id>/')
+        return redirect(f'user_details/{user_id}/')
 
     return render (request , 'login.html')
 
