@@ -185,7 +185,7 @@ async function getChatbotResponse(message) {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({ question: message })
-    });
+    });     
     console.log(response);
     if (!response.ok) {
         throw new Error('Network response was not ok');

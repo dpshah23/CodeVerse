@@ -1,13 +1,17 @@
 {% extends "navbar.html" %}
  {% block title %} Community {% endblock title %}
  {% block body %}
+ <link href="/static/css/channels.css" rel="stylesheet" />
  <script src="https://cdn.tailwindcss.com"></script>
  <script src="https://unpkg.com/htmx.org@2.0.1" integrity="sha384-QWGpdj554B4ETpJJC9z+ZHJcA/i59TyjxEPXiiUgN2WmTyV5OEZWCD6gQhgkdpB/" crossorigin="anonymous"></script>
  <script src="https://unpkg.com/hyperscript.org@0.9.12"></script>
  <script src="https://unpkg.com/htmx.org/dist/ext/ws.js"></script>
  
  
- Group Name : {{chat_group}}
+ <h2 class="grp-name">
+    <p><i class="fa-solid fa-users-line"></i>{{chat_group}}</p>
+ </h2>
+ 
  <wrapper class="block max-w-2xl mx-auto my-10 px-6">
      <div id="chat_window" class="h-[45rem] flex flex-col bg-gray-800 rounded-2xl shadow-2xl relative p-1">
          <div class="flex justify-center text-emerald-400 bg-gray-800 p-2 sticky top-0 z-10">

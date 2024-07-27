@@ -1,11 +1,24 @@
 {% extends "navbar.html" %}
 
 {% block body %}
-
-<h1>List of all joined channels</h1>
+<link href="/static/css/channels.css" rel="stylesheet" />
+<section class="section hero" aria-label="home">
+    <div class="container">
+      <h1 class="h1 hero-title">List Of Your<strong class="strong"> Channels</strong></h1>
+    </div>
+  </section>
 
 {% for channel in channels %}
-<a href="/chat/{{channel.group_id}}">{{channel.group_name}}</a>
+<div class="list">
+    <ul>
+        <li>
+            <a href="/chat/{{channel.group_id}}"><i class="fa-solid fa-arrow-right"></i>{{channel.group_name}}</a>
+        </li>
+        
+    </ul>
+    
+</div>
+
 {% endfor %}
 {% endblock body %}
 

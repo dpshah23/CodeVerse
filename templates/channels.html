@@ -15,7 +15,7 @@
                 <img src="/static/images/Backend Images.png" alt="backend" />
                 <h1><i class="fas fa-database"></i> Backend</h1>
             </div>
-            <div class="channel-card backend" onclick="openModal('backendModal')">
+            <div class="channel-card backend" onclick="openModal('AI/ML Model')">
                 <img src="/static/images/ai-ml.png" alt="AI/ML" />
                 <h1><i class="fas fa-database"></i> AI/ML</h1>
             </div>
@@ -119,7 +119,11 @@
                         experienced developers, consider signing up and joining our community server. In our server, you can
                     chat with experts, get answers to your questions, and share your progress. It's a fantastic
                     opportunity to learn, collaborate, and grow in the world of frontend development.</p>
-                    <a href="/login" class="btn">Go to Channels</a>
+                    {% if not request.session.email %}
+                    <a href="/auth/login/" class="btn">Go to Channels</a>
+                    {% else %}
+                    <a href="/channels/" class="btn">Go to Channels</a>
+                    {% endif %}
             </div>
         </div>
     </div>
@@ -186,7 +190,11 @@
     
             <div class="button-container">
                 <p>If you're excited to learn more about backend development and connect with fellow learners and experienced developers, consider signing up and joining our community server. In our server, you can chat with experts, get answers to your questions, and share your progress. It's a fantastic opportunity to learn, collaborate, and grow in the world of backend development.</p>
-                <a href="/login" class="btn">Go to Channels</a>
+                {% if not request.session.email %}
+                    <a href="/auth/login/" class="btn">Go to Channels</a>
+                    {% else %}
+                    <a href="/channels/" class="btn">Go to Channels</a>
+                    {% endif %}
             </div>
         </div>
     </div>
@@ -194,7 +202,7 @@
     <div id="AI/ML Model" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('AI/ML Model')">&times;</span>
-            <h1><i class="fas fa-laptop-code section-icon"></i> Frontend Development Overview</h1>
+            <h1><i class="fas fa-laptop-code section-icon"></i> AI/ML Overview</h1>
 
             <div class="section">
                 <h2><i class="fas fa-info-circle section-icon"></i> What is AI/ML?</h2>
@@ -282,7 +290,11 @@
                     developers, consider signing up and joining our community server. In our server, you can
                     chat with experts, get answers to your questions, and share your progress. It's a fantastic
                     opportunity to learn, collaborate, and grow in the world of AI/ML.</p>
-                <a href="/login" class="btn">Go to Channels</a>
+                    {% if not request.session.email %}
+                    <a href="/auth/login/" class="btn">Go to Channels</a>
+                    {% else %}
+                    <a href="/channels/" class="btn">Go to Channels</a>
+                    {% endif %}
             </div>
         </div>
     </div>

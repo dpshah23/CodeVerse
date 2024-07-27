@@ -181,3 +181,69 @@
     text-decoration: none;
     cursor: pointer;
   }
+
+  /* disp_all_channels.html */
+  @media (min-width: 1200px) {
+    .section.hero {
+        padding-block: 47px 2px !important;
+    }
+}
+
+.list{
+  display: flex;
+    justify-content: center;
+}
+.list ul li{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2px 2px;
+  width: auto;
+  font-size: 3rem;
+  color: white;
+}
+
+.list ul li a{
+  padding: 3px 5px;
+  color: white;
+}
+
+.list ul li i{
+  padding: 9px 5px;
+}
+
+.list ul li a:hover {
+  color: #00FFFF;
+}
+
+.chat-msg{
+  color: black
+}
+
+.chat-input{
+  border: 2px solid black;
+  border-radius: 5px;
+  color: white;
+}
+
+.grp-name p{
+  width: auto;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    color: white;
+    padding-top: 5px;
+    margin-bottom: -15px;
+}
+
+.grp-name p i{
+  padding-top: 8px;
+    padding-right: 17px;
+}
+
+.chat-receive{
+  color: black;
+}
+
+form label{
+  display: none;
+}
