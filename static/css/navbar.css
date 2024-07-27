@@ -432,6 +432,7 @@
     font-size: 30px;
     cursor: pointer;
     z-index: 1000;
+    /* display: none; */
 }
 .chatbot-container {
     display: none;
@@ -459,6 +460,8 @@
     overflow-y: auto;
     background-color: #f9f9f9;
     color: black;
+    max-height: 300px; /* Adjust as needed */
+    overflow-y: auto;
 }
 .chatbot-input-container {
     display: flex;

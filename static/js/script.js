@@ -161,8 +161,13 @@ async function sendMessage() {
     displayMessage('You', message);
     input.value = '';
 
-    const response = await getChatbotResponse(message);
-    displayMessage('Bot', response);
+    try {
+        const response = await getChatbotResponse(message);
+        displayMessage('Bot', response.answer); // Assuming response is structured as {'answer': ...}
+    } catch (error) {
+        console.error('Error:', error);
+        // Handle error display or logging as needed
+    }
 }
 
 function displayMessage(sender, message) {
@@ -174,13 +179,17 @@ function displayMessage(sender, message) {
 }
 
 async function getChatbotResponse(message) {
-    const response = await fetch('/api/chatbot/', {
+    const response = await fetch('http://localhost:8000/api/chatbot/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({ question: message })
     });
-    const data = await response.json();
-    return data.answer;
+    console.log(response);
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+    return await response.json();
+
 }
