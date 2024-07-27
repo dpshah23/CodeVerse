@@ -42,8 +42,7 @@ class Users_main(models.Model):
     time_stamp = models.DateField()
     is_active = models.BooleanField(default=True)
     level = models.CharField(max_length=50,choices=levels,blank=True,null=True)
-    tech=models.CharField(max_length=150,choices=tech,blank=True,null=True
-                          )
+    tech=models.CharField(max_length=150,choices=tech,blank=True,null=True)
     
     
     def __str__(self):
