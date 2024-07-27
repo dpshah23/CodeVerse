@@ -145,3 +145,42 @@ function toggleFaq(element) {
     const faq = element.parentElement;
     faq.classList.toggle("open");
 }
+
+//ChatBot
+
+function toggleChatbot() {
+    const chatbotContainer = document.getElementById('chatbotContainer');
+    chatbotContainer.style.display = chatbotContainer.style.display === 'none' ? 'block' : 'none';
+}
+
+async function sendMessage() {
+    const input = document.getElementById('chatbotInput');
+    const message = input.value;
+    if (message.trim() === '') return;
+
+    displayMessage('You', message);
+    input.value = '';
+
+    const response = await getChatbotResponse(message);
+    displayMessage('Bot', response);
+}
+
+function displayMessage(sender, message) {
+    const messagesContainer = document.getElementById('chatbotMessages');
+    const messageElement = document.createElement('div');
+    messageElement.textContent = `${sender}: ${message}`;
+    messagesContainer.appendChild(messageElement);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+}
+
+async function getChatbotResponse(message) {
+    const response = await fetch('/api/chatbot/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ question: message })
+    });
+    const data = await response.json();
+    return data.answer;
+}

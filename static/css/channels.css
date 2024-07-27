@@ -1,39 +1,4 @@
-body {
-    background: #171616;
-    color: #ffffff;
-    font-family: 'Exo 2', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-  }
-  
-  .nav {
-    background: transparent;
-    color: white;
-    position: absolute;
-    top: 20px;
-    width: 100%;
-    gap: 10px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-around;
-  }
-  
-  .nav a {
-    color: #4cd6c9;
-    text-decoration: none;
-    text-transform: uppercase;
-    padding: 10px;
-    font-weight: bold;
-    font-size: 30px;
-    font-family: 'Inconsolata', monospace;
-  }
-  
-  .nav a:hover {
-    text-decoration: underline;
-  }
+
   
   .container {
     display: flex;

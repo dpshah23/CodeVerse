@@ -9,7 +9,7 @@
 
 .login-body {
   height: 77vh;
-  width: 90vw;
+  width: 99vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -101,7 +101,7 @@
 
 .login-signup-box {
   gap: 30px;
-  width: 600px;
+  width: 512px;
 }
 
 .ele {

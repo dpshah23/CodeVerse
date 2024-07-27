@@ -104,13 +104,11 @@ def join(request,id):
         messages.error(request,"Please Login")
         return redirect("/auth/login")
     
-    if request.method=="POST":
-        username=request.session['username']
-        email=request.session['email']
+    
+    username=request.session['username']
+    email=request.session['email']
+    usercreate=Joined(username=username,email=email,group_id=id,timestamp=datetime.today())
+    usercreate.save()
 
-        usercreate=Joined(username=username,email=email,group_id=id,timestamp=datetime.today())
-
-        usercreate.save()
-
-    return render(request,"accept_invite.html")
+    return redirect(f'/chat/{id}')
 
