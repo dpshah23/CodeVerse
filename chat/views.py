@@ -38,7 +38,7 @@ def home_view(request , chatroom_name):
     
     try:
         obj=Chatgroup.objects.get(group_id=chatroom_name)
-        print(obj)
+        # print(obj)
     except Exception as e:
         messages.error(request,"Channel Not Found...")
         print(e)
@@ -46,7 +46,7 @@ def home_view(request , chatroom_name):
         
     email=request.session['email']
     username=request.session['username']
-    print(email)
+    # print(git
     
     requestusers=Joined.objects.filter(email=email).count()
     
@@ -63,10 +63,10 @@ def home_view(request , chatroom_name):
     # chat_messages = chat_group.chat_messages.all()[:30]
     
     chat_group=Chatgroup.objects.get(group_id=chatroom_name)
-    print(chat_group.group_name)
+    # print(chat_group.group_name)
     chat_messages=Group_msg.objects.filter(group_id=chatroom_name)[:30]
 
-    print(chat_messages)
+    # print(chat_messages)
     form = ChatmessageCreateForm()
     if request.method == 'POST' and request.htmx:
         form=ChatmessageCreateForm(request.POST)

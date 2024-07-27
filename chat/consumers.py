@@ -4,7 +4,7 @@ from .models import Chatgroup, Group_msg
 import json
 from django.template.loader import render_to_string
 import datetime
-from auth1.models import Users
+from auth1.models import Users_main
 from asgiref.sync import async_to_sync
 
 class ChatroomConsumer(WebsocketConsumer):
@@ -29,7 +29,7 @@ class ChatroomConsumer(WebsocketConsumer):
         
 
         if self.user not in self.chatroom.users_online.all():
-            id=Users.objects.get(username=self.user).id
+            id=Users_main.objects.get(username=self.user).id
             self.chatroom.users_online.add(id)
             self.update_online_count()
 
@@ -87,7 +87,7 @@ class ChatroomConsumer(WebsocketConsumer):
         )
 
         if self.user in self.chatroom.users_online.all():
-            id=Users.objects.get(username=self.user)
+            id=Users_main.objects.get(username=self.user)
             self.chatroom.users_online.remove(id)
             self.update_online_count() 
 
@@ -106,7 +106,7 @@ class ChatroomConsumer(WebsocketConsumer):
         
         chat_messages = Group_msg.objects.filter(group_id=self.chatroom.group_id)[:30]
         author_ids = set([message.username for message in chat_messages])
-        users = Users.objects.filter(username__in=author_ids)
+        users = Users_main.objects.filter(username__in=author_ids)
         
         context = {
             'online_count': online_count,
