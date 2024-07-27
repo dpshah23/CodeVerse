@@ -143,6 +143,8 @@ def channels(request):
 
 @csrf_exempt
 def api_reply(request):
+    print(request.method)
+    print(request.body)
     if request.method=="POST":
         load_dotenv()
         api_key=os.getenv('API_KEY_GEMINI')
@@ -160,6 +162,10 @@ def api_reply(request):
         except Exception as e:
             print(e)
             return JsonResponse({'error': str(e)}, status=500)
+        
+    else:
+        print("Invalid method")
+        return JsonResponse({'error':"Invalid method"})
         
 def profile(request , username):
     if 'email' not in request.session:
