@@ -96,6 +96,7 @@ def user_details(request , user_id):
         dob = request.POST.get( 'dob' )
         bio = request.POST.get( 'bio' )
         level = request.POST.get('level')
+        tech = request.POST.get('tech')
 
 
         obj, created = Users_main.objects.update_or_create(
@@ -109,11 +110,13 @@ def user_details(request , user_id):
                 'dob' : dob ,
                 'bio' : bio ,
                 'is_active' : True , 
-                'level' : level 
+                'level' : level ,
+                'tech' : tech ,
                 
             }
         )
-        return render( request , 'quiz.html' , {'level':level})
+        return render( request , 'quiz.html' , {'level':level,'user_id':user_id ,'tech':tech} )
+
     return render (request , 'user_details.html')
 
 

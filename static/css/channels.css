@@ -1,6 +1,6 @@
 
   
-  .container {
+  .channels-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,7 +94,7 @@
     padding-bottom: 10px;
   }
   
-  .button-container {
+  .button-channels-container {
     margin-top: 20px;
   }
   
@@ -127,7 +127,7 @@
   }
   
   .section ul li {
-    background-color: #333;
+    /* background-color: #333; */
     margin: 10px 0;
     padding: 10px;
     border-radius: 5px;
@@ -135,10 +135,13 @@
     align-items: center;
     color: #fff;
   }
+  .section ul li:hover{
+    text-decoration: overline;
+  }
   
   .section ul li::before {
-    content: "\2022";
-    color: #FFA500;
+    /* content: "\2022"; */
+    /* color: #FFA500; */
     font-weight: bold;
     display: inline-block;
     width: 1em;
@@ -187,6 +190,28 @@
     .section.hero {
         padding-block: 47px 2px !important;
     }
+
+    .channels-container{
+      display: flex;
+      flex-direction: column;
+    }
+
+    .channel-card{
+      display: flex;
+      flex-direction: column;
+    }
+}
+
+@media (max-width: 750px){
+  .channels-container{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .channel-card{
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .list{

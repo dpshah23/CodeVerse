@@ -400,10 +400,17 @@
   
   .navbar ul {
     background: transparent;
+    border-bottom: none;
+    list-style: none;
   }
 
   .navbar ul li a{
     background: transparent;
+  
+  }
+
+  .navbar ul li a:hover{
+    text-decoration: none;
   }
 
   .navbar.active {
@@ -758,12 +765,14 @@ h3 {
 }
 
 .section ul li::before {
-  content: "\2022";
-  color: #FFA500;
+  /* content: "\2022"; */
+  color:white;
+  /* border: 1px solid #00FFFF; */
   font-weight: bold;
   display: inline-block;
   width: 1em;
   margin-right: 10px;
+  list-style: none;
 }
 
 .section ul li strong {
@@ -1087,7 +1096,10 @@ h3 {
   
   
     .section ul li{
-      border-bottom: 1px solid white;
+      /* border-bottom: 1px solid white; */
+      border-bottom: none;
+      text-decoration: none;
+     
     }
   
     /**
