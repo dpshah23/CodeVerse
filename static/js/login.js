@@ -1,17 +1,17 @@
 // login/Sign up functionality
-let signup = document.querySelector(".signup");
-let login = document.querySelector(".login");
-let slider = document.querySelector(".slider");
-let formSection = document.querySelector(".form-section");
+let signup = document.querySelector(".login-signup");
+let login = document.querySelector(".login-login");
+let slider = document.querySelector(".login-slider");
+let formSection = document.querySelector(".login-form-section");
 
 signup.addEventListener("click", () => {
-    slider.classList.add("moveslider");
-    formSection.classList.add("form-section-move");
+    slider.classList.add("login-moveslider");
+    formSection.classList.add("login-form-section-move");
 });
 
 login.addEventListener("click", () => {
-    slider.classList.remove("moveslider");
-    formSection.classList.remove("form-section-move");
+    slider.classList.remove("login-moveslider");
+    formSection.classList.remove("login-form-section-move");
 });
 
 // Username validation

@@ -1,39 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- primary meta tags-->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login/Sign UP</title>
-    <link rel="stylesheet" href="/static/css/login.css" />
-    <!-- <link rel="stylesheet" href="/static/css/navbar.css" /> -->
-    <script src="https://kit.fontawesome.com/36d72e7e2f.js" crossorigin="anonymous"></script>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  </head>
-  <body>
-    <div class="container">
-      <div class="slider"></div>
-      <div class="btn">
-        <button class="login">Login</button>
-        <button class="signup">Signup</button>
+{% extends "navbar.html" %}
+{% block title %}Login/SIgn Up{% endblock title %}
+
+{% block body%}
+<link rel="stylesheet" href="/static/css/login.css">  
+    <div class="login-body">  
+    <div class="login-container">
+      <div class="login-slider"></div>
+      <div class="login-btn">
+        <button class="login-login">Login</button>
+        <button class="login-signup">Signup</button>
       </div>
       <!-- login form -->
-      <div class="form-section">
-        <div class="login-box">
+      <div class="login-form-section">
+        <div class="login-login-box">
           <input
             type="email"
             class="email ele"
             placeholder="youremail@email.com"
-            name = "email"
           />
-          <input type="password" name = "password" class="password ele" placeholder="password" />
+          <input type="password" class="password ele" placeholder="password" />
           <button class="submit" onclick="showToast(loginmsg)">Login</button>
         </div>
         <!--signup form-->
-        <div class="signup-box" id="signup-form">
+        <div class="login-signup-box" id="signup-form">
           <input
             type="text"
-            name = "username"
             class="name ele"
             id="username"
             placeholder="Enter your name"
@@ -41,14 +32,12 @@
           <span id="username-error" class="error-message"></span>
           <input
             type="email"
-            name = "email"
             class="email ele"
             placeholder="youremail@email.com"
           />
           <div class="password-container ele">
             <input
               type="password"
-              name = "password"
               class="password ele"
               id="password"
               placeholder="Password"
@@ -79,6 +68,6 @@
     <div id="toastBox">
         
     </div>
-    <script src="/static/js/login.js"></script>
-  </body>
-</html>
+  </div>
+  <script src="/static/js/script.js"></script>
+{% endblock body%}
