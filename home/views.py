@@ -164,7 +164,7 @@ def api_reply(request):
 def profile(request , username):
     if 'email' not in request.session:
         messages.error(request,"You are not logged in")
-        return redirect('/')
+        return redirect('/') 
     
     try :
         user = Users_main.objects.get(username=username)
