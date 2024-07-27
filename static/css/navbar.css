@@ -538,53 +538,104 @@
     #FOOTER
   \*-----------------------------------*/
   
-  .footer { padding-block: 40px 20px; }
-  
-  .section.footer-top { border-block-end: none; }
-  
-  .footer-top {
-    display: grid;
-    gap: 25px;
-  }
-  
-  .footer .logo { margin-block-end: 25px; }
-  
-  .footer-text {
-    font-size: var(--fs-5);
-    font-weight: var(--fw-500);
-    line-height: 1.4;
-  }
-  
-  .footer-list .h5 {
-    font-weight: var(--fw-700);
-    margin-block-end: 15px;
-  }
-  
-  .footer-list-item {
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+footer {
+    background-color: #111;
+}
+
+.footerContainer {
+    width: 100%;
+    padding: 70px 30px 20px;
+}
+
+.socialIcons {
     display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  
-  .footer-list-item ion-icon {
-    font-size: 18px;
-    flex-shrink: 0;
-  }
-  
-  .footer-link {
-    font-size: var(--fs-7);
-    font-weight: var(--fw-500);
-    margin-block-start: 8px;
-  }
-  
-  .copyright {
-    font-size: var(--fs-8);
-    margin-block-start: 25px;
-  }
-  
-  .copyright-link { display: inline-block; }
-  
-  
+    justify-content: center;
+}
+
+.socialIcons a {
+    text-decoration: none;
+    padding: 10px;
+    background-color: #ffffff;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.socialIcons a i {
+    font-size: 2rem;
+    color: #111;
+    opacity: 0.9;
+}
+
+
+.socialIcons a:hover {
+    background-color: #111;
+    transform: 0.5s;
+    transition: 0.5s;
+}
+
+.socialIcons a:hover i {
+    color: white;
+    transform: 5s;
+}
+
+.footerNav {
+    margin: 30px 0;
+}
+
+.footerNav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.footerNav ul li a {
+    color: white;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.3em;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+
+.footerNav ul li a:hover {
+    opacity: 1;
+}
+
+.footerBottom {
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+}
+
+.footerBottom p {
+    color: white;
+}
+
+.designer {
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0px 5px;
+}
+
+@media (max-width: 700px) {
+    .footerNav ul {
+        flex-direction: column;
+    }
+
+    .footerNav ul li {
+        width: 100%;
+        text-align: center;
+        margin: 10px;
+    }
+}
   
 /*-----------------------------------*\
   #Channels
