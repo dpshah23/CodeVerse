@@ -1,0 +1,55 @@
+{% extends "navbar.html" %}
+ {% block title %} Community {% endblock title %}
+ {% block body %}
+ <script src="https://cdn.tailwindcss.com"></script>
+ <script src="https://unpkg.com/htmx.org@2.0.1" integrity="sha384-QWGpdj554B4ETpJJC9z+ZHJcA/i59TyjxEPXiiUgN2WmTyV5OEZWCD6gQhgkdpB/" crossorigin="anonymous"></script>
+ <script src="https://unpkg.com/hyperscript.org@0.9.12"></script>
+ <script src="https://unpkg.com/htmx.org/dist/ext/ws.js"></script>
+ 
+ 
+ Group Name : {{chat_group}}
+ <wrapper class="block max-w-2xl mx-auto my-10 px-6">
+     <div id="chat_window" class="h-[45rem] flex flex-col bg-gray-800 rounded-2xl shadow-2xl relative p-1">
+         <div class="flex justify-center text-emerald-400 bg-gray-800 p-2 sticky top-0 z-10">
+             <span id="online-count" class="pr-1"></span>online
+            </div>
+            <div id='chat_container' class="overflow-y-auto grow">
+                <ul id='chat_messages' class="flex flex-col justify-end gap-2 p-4">
+                    {% for message in chat_messages reversed %}
+                    
+                    
+                    {% include "chat_message.html" %}
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="sticky bottom-0 z-10 p-2 bg-gray-800">
+                <div class="flex items-center rounded-xl px-2 py-2">
+                    <form id="chat_message_form" class="w-full" 
+                    hx-ext="ws"
+                    ws-connect="ws://{{ request.get_host }}/ws/chat/{{ chatroom_name }}/"
+                    ws-send="this.value"
+                    ws-receive="addMessage(event.detail)"
+                    _="on htmx:wsAfterSend reset() me">
+                    {% if csrf_token %}
+                    <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+                    {% endif %}
+                    {{ form }}
+                </form>
+            </div>
+        </div>
+    </div>
+</wrapper>
+
+<script>
+    
+    function scrollToBottom(time=0) {
+        setTimeout(function() {
+            const container = document.getElementById('chat_container');
+            container.scrollTop = container.scrollHeight;
+        }, time);
+    }
+    scrollToBottom()
+    
+</script>
+
+{% endblock body %}
