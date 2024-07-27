@@ -10,6 +10,8 @@ urlpatterns = [
     path('api/chatbot/',api_reply,name="api_reply"),
     path('profile/<username>',profile,name="profile"),
     path('checkansbeg/<username>',quiz_ans_beg,name="quiz_ans_beg"),
-    path('checkansinter/<username>',quiz_ans_inter,name="quiz_ans_inter")
+    path('checkansinter/<username>',quiz_ans_inter,name="quiz_ans_inter"),
+    path('termsandcondition/' , terms , name= 'terms'),
+    path('privacy_policy/' , privacy , name = 'privacy_policy')
 
 ]
