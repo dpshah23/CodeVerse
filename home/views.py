@@ -12,12 +12,15 @@ import os
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 import base64
+from django_ratelimit.decorators import ratelimit
 
 
 # Create your views here.
+@ratelimit (key='ip' ,rate='10/m' )
 def home(request):
     return render(request,"home.html")
 
+@ratelimit (key='ip' ,rate='10/m' )
 def clg_info(request):
     if request.method=="POST":
         name=request.POST.get('name')
@@ -33,7 +36,8 @@ def clg_info(request):
         obj.save()
         
     return redirect('/')
-        
+
+@ratelimit (key='ip' ,rate='10/m' )        
 def quiz (request):
     try:
         email = request.session['email']
@@ -57,6 +61,7 @@ def quiz (request):
         print(e)
     return render(request,"Quiz.html",{"questions":final})
 
+@ratelimit (key='ip' ,rate='10/m' )
 def quiz_ans_beg(request):
     
     email = request.session['email']
@@ -93,7 +98,8 @@ def quiz_ans_beg(request):
             
         
             return render(request,"get_score.html",{'score':len(final_ans)}) 
-        
+
+@ratelimit (key='ip' ,rate='10/m' )        
 def channels(request):
     return render(request,"channels.html")
         
@@ -148,6 +154,7 @@ def channels(request):
 #     pass
 
 
+@ratelimit (key='ip' ,rate='10/m' )
 @csrf_exempt
 def api_reply(request):
     print(request.method)
@@ -173,7 +180,8 @@ def api_reply(request):
     else:
         print("Invalid method")
         return JsonResponse({'error':"Invalid method"})
-        
+
+@ratelimit (key='ip' ,rate='10/m' )        
 def profile(request , username):
     if 'email' not in request.session:
         messages.error(request,"You are not logged in")
@@ -187,6 +195,7 @@ def profile(request , username):
 
     return render(request,"profile.html",{'user':user})
 
+@ratelimit (key='ip' ,rate='10/m' )
 def edit_profile(request , username):
     if 'email' not in request.session :
         messages.error("You are not logged in .")
@@ -242,6 +251,7 @@ def edit_profile(request , username):
         print(e)
 
 
+@ratelimit (key='ip' ,rate='10/m' )
 def quiz_ans_inter(request,username):
     if request.method=="POST":
         q1=request.POST.get('q1')
@@ -278,9 +288,11 @@ def quiz_ans_inter(request,username):
             print(e)
             username=request.sesson['username']
             return redirect(f'/quiz/{username}')
-        
+
+@ratelimit (key='ip' ,rate='10/m' )        
 def terms(request):
     return render (request,'terms_and_conditions.html')
 
+@ratelimit (key='ip' ,rate='10/m' )
 def privacy(request):
     return render (request , 'privacy_policy.html')

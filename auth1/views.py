@@ -19,9 +19,10 @@ from PIL import Image, ImageDraw, ImageFont
 import io
 import base64
 from datetime import datetime
+from django_ratelimit.decorators import ratelimit
 
 # Create your views here.
-
+@ratelimit (key='ip' ,rate='10/m' )
 def login(request):
     if request.method=="POST":
         email=request.POST.get('email')
@@ -58,13 +59,15 @@ def login(request):
         
     return render(request,"login.html")
 
+@ratelimit (key='ip' ,rate='10/m' )
 def check_user(request,username):
     try:
         user=Users_main.objects.get(username=username)
         return HttpResponse({"success":False})
     except Users_main.DoesNotExist:
         return HttpResponse({"success":True})
-    
+
+@ratelimit (key='ip' ,rate='10/m' )
 def signup( request):
     if request.method=="POST":
         username=request.POST.get('username')
@@ -81,6 +84,7 @@ def signup( request):
 
     return render (request , 'login.html')
 
+@ratelimit (key='ip' ,rate='10/m' )
 def user_details(request , user_id):
     if request.method == "POST":
         email = Users_main.objects.get(user_id=user_id).email
@@ -289,7 +293,7 @@ def reset_pass(request):
 
     return render(request, 'Reset_Password.html')
 
-
+@ratelimit (key='ip' ,rate='10/m' )
 def logout(request):
 
     if 'email' and 'username' and 'id' in request.session:
