@@ -1,13 +1,7 @@
 {% extends "navbar.html" %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% block title %}Terms Ans Conditions{% endblock title %}
     <link  href="/static/css/privacy_policy.css" rel="stylesheet">
-    <title>Terms and Conditions | Code Verse</title>
-</head>
-<body>
+{% block body %}
     <section class="content">
     <h1>Terms and Conditions for Code Verse</h1>
 
@@ -80,5 +74,4 @@
 
     <p>These Terms and Conditions provide a comprehensive overview of the rules and guidelines for using the Code Verse platform.</p>
     </section>
-</body>
-</html>
+    {% endblock body %}

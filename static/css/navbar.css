@@ -383,7 +383,7 @@
   .nav-toggle-btn.active .span.three { transform: translateY(-10px) rotate(-45deg); }
   
   .navbar {
-    background-color: var(--eerie-black);
+    background: transparent;
     color: var(--white);
     position: absolute;
     top: calc(100% - 20px);
@@ -398,6 +398,14 @@
     z-index: 2;
   }
   
+  .navbar ul {
+    background: transparent;
+  }
+
+  .navbar ul li a{
+    background: transparent;
+  }
+
   .navbar.active {
     transform: translateY(0);
     opacity: 1;
@@ -456,12 +464,13 @@
 }
 .chatbot-messages {
     flex: 1;
-    padding: 10px;
-    overflow-y: auto;
+    padding: 0px;
+   
     background-color: #f9f9f9;
     color: black;
     max-height: 300px; /* Adjust as needed */
     overflow-y: auto;
+    height: 66vh;
 }
 .chatbot-input-container {
     display: flex;
@@ -732,15 +741,17 @@ h3 {
 }
 
 .section ul {
+  border-radius: 5px; 
   list-style-type: none;
   padding: 0;
 }
 
 .section ul li {
-  background-color: #333;
+
+ 
   margin: 10px 0;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: none;
   display: flex;
   align-items: center;
   color: #fff;
@@ -982,6 +993,9 @@ h3 {
     .avatar.large:is(:hover, :focus) { transform: translateY(-3px); }
   
   
+    .section ul li{
+      border-bottom: 1px solid white;
+    }
   
     /**
      * RECOMMENDED POST
@@ -992,7 +1006,9 @@ h3 {
       column-gap: 15px;
     }
   
-  
+    .section ul li{
+      border-bottom: 1px solid white;
+    }
   
     /**
      * FOOTER
@@ -1070,6 +1086,9 @@ h3 {
     .grid-list { grid-template-columns: repeat(3, 1fr); }
   
   
+    .section ul li{
+      border-bottom: 1px solid white;
+    }
   
     /**
      * HEADER

@@ -4,7 +4,7 @@
 {% block body %}
 
 <script src="https://kit.fontawesome.com/36d72e7e2f.js" crossorigin="anonymous"></script>   
-<link rel="stylesheet" href="/style/channels.css" />
+<link rel="stylesheet" href="/static/css/channels.css">  
 
         <div class="container">
             <div class="channel-card frontend" onclick="openModal('frontendModal')">
@@ -14,7 +14,11 @@
             <div class="channel-card backend" onclick="openModal('backendModal')">
                 <img src="/static/images/Backend Images.png" alt="backend" />
                 <h1><i class="fas fa-database"></i> Backend</h1>
-        </div>
+            </div>
+            <div class="channel-card backend" onclick="openModal('backendModal')">
+                <img src="/static/images/ai-ml.png" alt="AI/ML" />
+                <h1><i class="fas fa-database"></i> AI/ML</h1>
+            </div>
     </div>
     
     <!-- The Modal for Frontend -->
@@ -124,104 +128,164 @@
     <div id="backendModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('backendModal')">&times;</span>
+            <h1><i class="fas fa-server section-icon"></i> Backend Development Overview</h1>
+    
             <div class="section">
-                <h2><i class="fas fa-info-circle section-icon"></i> What is Frontend Development?</h2>
-                <p>Frontend development, also known as client-side development, is the practice of producing HTML, CSS,
-                    and JavaScript for a website or web application so that a user can see and interact with them
-                    directly. The challenge associated with frontend development is that the tools and techniques used
-                    to create the frontend of a website change constantly, and so the developer needs to constantly be
-                    aware of how the field is developing.</p>
-                </div>
-                
-                <div class="section">
-                    <h2><i class="fas fa-code section-icon"></i> Basic Languages and Technologies:</h2>
-                    
-                    <h3><i class="fab fa-html5 section-icon"></i> HTML (HyperText Markup Language)</h3>
-                    <p><span class="key-point">Purpose:</span> HTML is the backbone of any website development process,
-                        without which a web page does not exist. HTML is a markup language that defines the structure of
-                        your content.</p>
-                        <p><span class="key-point">Example:</span> Think of HTML as the skeleton of a webpage. It helps in
-                            defining where the header, body, and footer of the page are located.</p>
-                            
-                            <h3><i class="fab fa-css3-alt section-icon"></i> CSS (Cascading Style Sheets)</h3>
-                            <p><span class="key-point">Purpose:</span> While HTML structures your content, CSS is what makes your
-                    website look good. CSS is a design language intended to simplify the process of making web pages
-                    presentable.</p>
-                <p><span class="key-point">Example:</span> CSS is used to apply styles to HTML elements. For instance,
-                    you can use CSS to change the color, font, and layout of your web pages. It’s what makes your
-                    content visually appealing and adaptable to different devices.</p>
-                    
-                    <h3><i class="fab fa-js section-icon"></i> JavaScript</h3>
-                <p><span class="key-point">Purpose:</span> JavaScript is a programming language used to create dynamic
-                    content that can interact with users. If HTML is the skeleton and CSS is the skin, JavaScript is the
-                    muscles.</p>
-                <p><span class="key-point">Example:</span> Use JavaScript to create things like interactive maps,
-                    animated graphics, and responsive forms. For instance, when you fill out a form online and get
-                    instant feedback (like checking if your email is valid), that’s JavaScript in action.</p>
-                </div>
-                
+                <h2><i class="fas fa-info-circle section-icon"></i> What is Backend Development?</h2>
+                <p>Backend development is like the magic behind the scenes of a website or app. It's all about making sure everything works smoothly and securely when you use a website. Backend developers build and maintain the parts of a website that you don't see, like servers and databases. Think of it as setting up the backstage of a theater to ensure the show runs perfectly!</p>
+            </div>
+    
+            <div class="section">
+                <h2><i class="fas fa-code section-icon"></i> Basic Languages and Technologies:</h2>
+    
+                <h3><i class="fab fa-node-js section-icon"></i> Node.js</h3>
+                <p><span class="key-point">Purpose:</span> Node.js allows you to use JavaScript on the server side. It helps you create dynamic content that updates automatically without needing to reload the page.</p>
+                <p><span class="key-point">Example:</span> Imagine you're building an online game. Node.js can handle real-time interactions, like updating scores or chatting with other players.</p>
+    
+                <h3><i class="fas fa-database section-icon"></i> SQL (Structured Query Language)</h3>
+                <p><span class="key-point">Purpose:</span> SQL is used to talk to databases. It's how you store, retrieve, and manage data like user information, scores, or any data your app needs.</p>
+                <p><span class="key-point">Example:</span> If you have a website where users can sign up, SQL helps save their information in a database so you can save their information to store their account.</p>
+    
+                <h3><i class="fab fa-python section-icon"></i> Python</h3>
+                <p><span class="key-point">Purpose:</span> Python is a beginner-friendly programming language used for many backend tasks. It's known for being easy to read and write.</p>
+                <p><span class="key-point">Example:</span> You can use Python to create a simple blog where users can post comments. Python makes it easy to handle user input and manage the data behind your blog.</p>
+            </div>
+    
             <div class="section">
                 <h2><i class="fas fa-lightbulb section-icon"></i> Pre-requisite Knowledge:</h2>
                 <ul>
-                    <li><strong>Basic Web Concepts:</strong> Understanding of how the web works, including concepts like
-                        HTTP, browsers, and web servers.</li>
-                        <li><strong>Version Control:</strong> Familiarity with version control systems (e.g., Git) to track
-                            changes and collaborate with others.</li>
-                            <li><strong>Programming Basics:</strong> Basic knowledge of programming concepts (variables, loops,
-                                conditionals) which are essential to write efficient code.</li>
-                            </ul>
-                        </div>
-
-            <div class="section">
-                <h2><i class="fas fa-cogs section-icon"></i> How Frontend Development Works:</h2>
-                <h3><i class="fas fa-sitemap section-icon"></i> Structure with HTML</h3>
-                <p>HTML uses tags and attributes to organize the content on the webpage. Tags are the building blocks,
-                    and attributes provide additional information about elements.</p>
-                    <p><span class="key-point">Example:</span> <code>&lt;h1&gt;</code> tag for headings,
-                        <code>&lt;p&gt;</code> tag for paragraphs, <code>&lt;a&gt;</code> tag for links.
-                    </p>
-                    
-                    <h3><i class="fas fa-paint-brush section-icon"></i> Style with CSS</h3>
-                    <p>CSS provides style rules that define how HTML elements are displayed. It includes layout, color,
-                        fonts, and overall visual effects.</p>
-                        <p><span class="key-point">Example:</span> <code>color: red;</code> to make text red,
-                            <code>margin: 10px;</code> to create space around elements.
-                        </p>
-
-                        <h3><i class="fas fa-magic section-icon"></i> Interactivity with JavaScript</h3>
-                        <p>JavaScript enables dynamic content and interactive elements on the webpage. It can manipulate HTML
-                            and CSS to update the UI, control multimedia, animate images, etc.</p>
-                            <p><span class="key-point">Example:</span>
-                    <code>document.getElementById("myElement").innerHTML = "Hello World!";</code> changes the content of
-                    an HTML element with the ID <code>myElement</code>.
-                </p>
-                
-                <h3><i class="fas fa-mobile-alt section-icon"></i> Responsive Design</h3>
-                <p>Ensuring that your web pages look good on all devices, from desktops to tablets to smartphones. This
-                    is often achieved through media queries and flexible grid layouts in CSS.</p>
-                <p><span class="key-point">Example:</span> Using a CSS media query to apply different styles for screen
-                    widths below 600px, ensuring a mobile-friendly design.</p>
+                    <li><strong>Basic Web Concepts:</strong> Understanding how the web works, like how websites are loaded and what a server does.</li>
+                    <li><strong>Version Control:</strong> Knowing how to use tools like Git to keep track of changes in your code and collaborate with others.</li>
+                    <li><strong>Programming Basics:</strong> Familiarity with basic programming ideas like variables, loops, and conditions to write efficient code.</li>
+                </ul>
             </div>
-            
+    
+            <div class="section">
+                <h2><i class="fas fa-cogs section-icon"></i> How Backend Development Works:</h2>
+                <h3><i class="fas fa-sitemap section-icon"></i> Server and Database</h3>
+                <p>Backend development involves setting up servers and databases to handle requests from users. The server processes these requests and interacts with the database to fetch or update data.</p>
+                <p><span class="key-point">Example:</span> If you create a social media app, the server handles requests like posting a new status update, while the database stores all the posts and user information.</p>
+    
+                <h3><i class="fas fa-code-branch section-icon"></i> APIs</h3>
+                <p>APIs (Application Programming Interfaces) let the front end talk to the backend. They define how different software components should interact.</p>
+                <p><span class="key-point">Example:</span> When you check the weather on an app, an API request fetches the weather data from a server to display it to you.</p>
+    
+                <h3><i class="fas fa-shield-alt section-icon"></i> Security</h3>
+                <p>Security plays an integral role in backend development to protect user data and prevent unauthorized access. This includes setting up user authentication and data encryption.</p>
+                <p><span class="key-point">Example:</span> When you log in to a website, the backend securely checks your username and password to make sure you have access and to ensure that your data is not being provided somewhere else to attackers.</p>
+    
+                <h3><i class="fas fa-tachometer-alt section-icon"></i> Performance Optimization</h3>
+                <p>Ensuring that the backend runs efficiently is crucial. This involves optimizing how data is retrieved and stored, and making sure the server can handle many requests at once.</p>
+                <p><span class="key-point">Example:</span> Using techniques like caching to store frequently accessed data can speed up your website and reduce server load.</p>
+            </div>
+    
             <div class="section">
                 <h2><i class="fas fa-thumbs-up section-icon"></i> Conclusion</h2>
-                <p>Frontend development is essential for creating the visual and interactive aspects of a website. By
-                    mastering HTML, CSS, and JavaScript, you can build beautiful, functional, and user-friendly web
-                    interfaces. This not only enhances user experience but also contributes to the overall success of a
-                    web project.</p>
+                <p>Backend development is an exciting field where you build the core functionality of websites and apps. By learning server-side languages, databases, and security measures, you can create powerful, efficient, and secure web applications. This not only enhances your coding skills but also opens up many career opportunities in tech.</p>
             </div>
-            
+    
             <div class="button-container">
-                <p>If you're eager to dive deeper into frontend development and connect with fellow learners and
-                    experienced developers, consider signing up and joining our community server. In our server, you can
-                    chat with experts, get answers to your questions, and share your progress. It's a fantastic
-                    opportunity to learn, collaborate, and grow in the world of frontend development.</p>
+                <p>If you're excited to learn more about backend development and connect with fellow learners and experienced developers, consider signing up and joining our community server. In our server, you can chat with experts, get answers to your questions, and share your progress. It's a fantastic opportunity to learn, collaborate, and grow in the world of backend development.</p>
                 <a href="/login" class="btn">Go to Channels</a>
             </div>
-            <a href="/login" class="btn">Go to Channels</a>
         </div>
     </div>
     
+    <div id="AI/ML Model" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('AI/ML Model')">&times;</span>
+            <h1><i class="fas fa-laptop-code section-icon"></i> Frontend Development Overview</h1>
+
+            <div class="section">
+                <h2><i class="fas fa-info-circle section-icon"></i> What is AI/ML?</h2>
+                <p>Artificial Intelligence (AI) and Machine Learning (ML) are fields of computer science that
+                    focus on creating systems capable of performing tasks that typically require human
+                    intelligence. These tasks include problem-solving, pattern recognition, and decision-making.
+                    AI is the broader concept of machines being able to carry out tasks in a way that we would
+                    consider "smart," while ML is a specific subset of AI that involves the use of algorithms
+                    and statistical models to enable machines to improve at tasks with experience.</p>
+            </div>
+
+            <div class="section">
+                <h2><i class="fas fa-code section-icon"></i> Basic Concepts and Technologies:</h2>
+
+                <h3><i class="fas fa-brain section-icon"></i> Neural Networks</h3>
+                <p><span class="key-point">Purpose:</span> Neural networks are a series of algorithms that
+                    attempt to recognize underlying relationships in a set of data through a process that mimics
+                    the way the human brain operates.</p>
+                <p><span class="key-point">Example:</span> They are used in various applications such as image
+                    and speech recognition.</p>
+
+                <h3><i class="fas fa-cogs section-icon"></i> Algorithms</h3>
+                <p><span class="key-point">Purpose:</span> Algorithms are the step-by-step instructions or rules
+                    that a machine follows to perform a task or solve a problem.</p>
+                <p><span class="key-point">Example:</span> Decision trees, support vector machines, and k-means
+                    clustering are examples of algorithms used in ML.</p>
+
+                <h3><i class="fas fa-chart-line section-icon"></i> Data Processing</h3>
+                <p><span class="key-point">Purpose:</span> Data processing involves collecting, transforming,
+                    and organizing data so that it can be used by AI/ML models.</p>
+                <p><span class="key-point">Example:</span> Data cleaning, normalization, and feature extraction
+                    are essential steps in preparing data for training models.</p>
+            </div>
+
+            <div class="section">
+                <h2><i class="fas fa-lightbulb section-icon"></i> Pre-requisite Knowledge:</h2>
+                <ul>
+                    <li><strong>Mathematics:</strong> A solid understanding of linear algebra, calculus, and
+                        probability.</li>
+                    <li><strong>Programming:</strong> Proficiency in programming languages like Python, which is
+                        widely used in AI/ML.</li>
+                    <li><strong>Statistics:</strong> Knowledge of statistical methods and how they apply to data
+                        analysis.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2><i class="fas fa-cogs section-icon"></i> How AI/ML Works:</h2>
+                <h3><i class="fas fa-sitemap section-icon"></i> Data Collection</h3>
+                <p>Data is collected from various sources and is crucial for training ML models. The quality and
+                    quantity of data directly impact the performance of the models.</p>
+                <p><span class="key-point">Example:</span> Gathering data from user interactions, sensors, or
+                    public datasets.</p>
+
+                <h3><i class="fas fa-paint-brush section-icon"></i> Model Training</h3>
+                <p>Models are trained using data. This involves feeding the data into the algorithm and allowing
+                    it to learn patterns and make predictions or decisions based on the data.</p>
+                <p><span class="key-point">Example:</span> Training a neural network to recognize images
+                    involves feeding it thousands of labeled images and adjusting the model based on its
+                    performance.</p>
+
+                <h3><i class="fas fa-magic section-icon"></i> Model Evaluation</h3>
+                <p>The trained model is evaluated using a separate set of data to assess its accuracy and
+                    performance. This helps in tuning the model for better results.</p>
+                <p><span class="key-point">Example:</span> Using a confusion matrix to evaluate the performance
+                    of a classification model.</p>
+
+                <h3><i class="fas fa-mobile-alt section-icon"></i> Deployment</h3>
+                <p>After a model is trained and evaluated, it is deployed into a production environment where it
+                    can be used to make predictions or automate tasks in real-time.</p>
+                <p><span class="key-point">Example:</span> Deploying a recommendation system on an e-commerce
+                    website to suggest products to users.</p>
+            </div>
+
+            <div class="section">
+                <h2><i class="fas fa-thumbs-up section-icon"></i> Conclusion</h2>
+                <p>AI/ML are transformative technologies that are reshaping various industries by enabling
+                    intelligent automation and decision-making. By understanding and mastering AI/ML concepts
+                    and techniques, you can build systems that learn from data and improve over time, driving
+                    innovation and efficiency.</p>
+            </div>
+
+            <div class="button-container">
+                <p>If you're eager to dive deeper into AI/ML and connect with fellow learners and experienced
+                    developers, consider signing up and joining our community server. In our server, you can
+                    chat with experts, get answers to your questions, and share your progress. It's a fantastic
+                    opportunity to learn, collaborate, and grow in the world of AI/ML.</p>
+                <a href="/login" class="btn">Go to Channels</a>
+            </div>
+        </div>
+    </div>
     
     
     <script src="/js/channels.js"></script>
