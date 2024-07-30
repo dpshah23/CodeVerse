@@ -1,0 +1,70 @@
+
+
+{% block body %}
+<!-- Alert Messages -->
+{% if messages %}
+  {% for message in messages %}
+    <div class="custom-alert custom-alert-{{ message.tags }}">
+      {{ message }}
+      <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+    </div>
+  {% endfor %}
+{% endif %}
+
+<link rel="stylesheet" href="/static/css/edit_profile.css">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+<div class="container">
+    <div class="form-content">
+        <header>Edit Profile</header>
+        <form action="/edit_profile/{{ user.username }}/" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="field-group">
+                <div class="field">
+                    <label for="phone">Contact No. :</label>
+                    <input type="number" name="phone" class="input" value="{{ user.phone }}" required>
+                </div>
+                <div class="field">
+                    <label for="city">City :</label>
+                    <input type="text" name="city" class="input" value="{{ user.city }}" required>
+                </div>
+            </div>
+
+            <div class="field-group">
+                <div class="field">
+                    <label for="qualification">Qualification :</label>
+                    <input type="text" name="qualifications" class="input" value="{{ user.qualification }}" required>
+                </div>
+                <div class="field">
+                    <label for="dob">Date of Birth :</label>
+                    <input type="date" name="dob" class="input" value="{{ user.dob|date:'Y-m-d' }}" required>
+                </div>
+            </div>
+
+            <div class="field-group">
+                <div class="field">
+                    <label for="bio">Bio :</label>
+                    <textarea name="bio" class="input" required>{{ user.bio }}</textarea>
+                </div>
+                <div class="field">
+                    <label for="description">Description :</label>
+                    <textarea name="description" class="input" required>{{ user.description }}</textarea>
+                </div>
+            </div>
+                
+            <div class="field">
+                <label for="profile_picture">Profile Picture</label>
+                <input type="file" name="profile_picture" class="input">
+                <span class="right-text"><p>*Image should be of .png, .jpg, .jpeg only</p></span>
+            </div>
+
+            <div class="field button-field">
+                <button value="submit" name="submit">Update Profile</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="/static/js/user_data.js"></script>
+{% endblock body %}

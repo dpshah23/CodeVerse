@@ -197,6 +197,11 @@ def profile(request , username):
 
 @ratelimit (key='ip' ,rate='10/m' )
 def edit_profile(request , username):
+    try:
+        user=Users_main.objects.get(username=username)
+    except Users_main.DoesNotExist:
+        messages.error ("Account Does't Exists")
+        return redirect('')
     if 'email' not in request.session :
         messages.error("You are not logged in .")
         return redirect('/')
@@ -214,6 +219,7 @@ def edit_profile(request , username):
                 image_data = image_file.read()
                 profile_pic = base64.b64encode(image_data).decode('utf-8')
             else:
+                user = Users_main.objects.get(username=username)
                 profile_pic = id.profile_pic 
 
                 phone = request.POST.get( 'phone' )
@@ -243,13 +249,14 @@ def edit_profile(request , username):
                 )
 
                 messages.success(request,'Volunteer Details Updated Successfully')
-                return redirect(f'/profile/<username>/')
+                return redirect(f'/profile/{username}/' , {'user':user})
     except Users_main.DoesNotExist :
         messages.error("account doesn't exists")
         return redirect ('/')
     except Exception as e :
         print(e)
 
+    return render(request,"edit_profile.html",{'user':user})
 
 @ratelimit (key='ip' ,rate='10/m' )
 def quiz_ans_inter(request,username):

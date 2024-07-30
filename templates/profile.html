@@ -19,6 +19,8 @@
             <img src="data:image/png;base64,{{ user.profile_pic }}" alt="{{ user.username }}'s profile picture" class="profile-pic">
             <h1 class="profile-name">{{ user.name }}</h1>
             <p class="profile-username">@{{ user.username }}</p>
+            
+            <a href="/edit_profile/{{user.username}}/" class="edit-profile-button">Edit Profile</a>
         </div>
         <div class="profile-details">
             <h2>Bio</h2>

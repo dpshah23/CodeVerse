@@ -9,6 +9,7 @@ urlpatterns = [
     # path('blogs/' , all_blogs , name = 'all_blogs'),
     path('api/chatbot/',api_reply,name="api_reply"),
     path('profile/<username>',profile,name="profile"),
+    path ('edit_profile/<username>/',edit_profile, name ='edit'),
     path('checkansbeg/<username>',quiz_ans_beg,name="quiz_ans_beg"),
     path('checkansinter/<username>',quiz_ans_inter,name="quiz_ans_inter"),
     path('termsandcondition/' , terms , name= 'terms'),
