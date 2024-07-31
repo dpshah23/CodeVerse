@@ -124,30 +124,19 @@ git clone https://github.com/dpshah23/CodeVerse.git
 cd CodeVerse
 ```
 
-- Create a virtual environment:
-```
-python -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-```
-- Install dependencies:
-
+- Build Image:
 
 ```
-pip install -r requirements.txt
+docker-compose build
 ```
 - Configure the database:
 
 Update codeverse/settings.py with your MySQL database credentials.
 
-- Apply migrations:
-
-```
-python manage.py migrate
-```
 
 - Run the development server:
 ```
-python manage.py runserver
+docker-compose up
 ```
 Access the application at http://127.0.0.1:8000/.
 
