@@ -99,11 +99,11 @@ After the initial implementation, we have integrated the **Gemenai API** to prov
 ### Admin Portal
 
 - **Django Admin**: Built-in admin interface for managing platform content.
-- **Jasmine**: Testing framework for the admin portal.
+- **Jazmine**: Testing framework for the admin portal.
 
 ### Authentication
 
-- **Django Authentication System**: Secure user authentication mechanism.
+- **Custom Authentication System**: Secure user authentication mechanism.
 
 ### Deployment
 
@@ -220,5 +220,3 @@ Users can ask questions through the platform and receive answers powered by the 
 The **CodeVerse** platform employs a traditional web application architecture using Django for both the backend and Frontend rendering. It leverages Django's powerful ORM to interact with a MySQL database for data management and uses the Gemenai API to provide AI-powered responses to user queries.
 
 The main focus of **CodeVerse Team** is to evaluate one's field of intrest and help them foster in that field also by connecting them with their community to get helped whenever they feel struck in any topic or during any of their projects.
-
-

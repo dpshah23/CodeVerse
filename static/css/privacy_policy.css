@@ -29,6 +29,7 @@
     --transition-1: 0.25s ease;
     --transition-2: 0.5s ease;
 }
+
 *,
 *::before,
 *::after {
@@ -36,6 +37,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 li { list-style: none; }
 a,
 img,
@@ -43,10 +45,12 @@ span,
 input,
 button,
 ion-icon { display: block; }
+
 a {
     color: inherit;
     text-decoration: none;
 }
+
 img { height: auto; }
 input,
 button {
@@ -60,11 +64,13 @@ input {
 }
 button { cursor: pointer; }
 ion-icon { pointer-events: none; }
+
 html {
     font-family: var(--ff-inter);
     font-size: 10px;
     scroll-behavior: smooth;
 }
+
 body {
     background-color: var(--eerie-black);
     color: var(--white);

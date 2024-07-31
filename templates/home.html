@@ -113,7 +113,11 @@
                         <!-- Other sections -->
                         <div class="button-container">
                           <p>If you're eager to dive deeper into frontend development and connect with fellow learners and experienced developers, consider signing up and joining our community server. In our server, you can chat with experts, get answers to your questions, and share your progress. It's a fantastic opportunity to learn, collaborate, and grow in the world of frontend development.</p>
-                          <a href="/login" class="btn">Go to Channels</a>
+                          {% if not request.session.email %}
+                          <a href="/auth/login/" class="btn">Go to Channels</a>
+                          {% else %}
+                          <a href="/chat" class="btn">Go to Channels</a>
+                          {% endif %}
                         </div>
                       </div>
                     </div>
@@ -225,7 +229,11 @@
                         <!-- Other sections -->
                         <div class="button-container">
                           <p>If you're eager to dive deeper into backend development and connect with fellow learners and experienced developers, consider signing up and joining our community server. In our server, you can chat with experts, get answers to your questions, and share your progress. It's a fantastic opportunity to learn, collaborate, and grow in the world of backend development.</p>
-                          <a href="/login" class="btn">Go to Channels</a>
+                          {% if not request.session.email %}
+                          <a href="/auth/login/" class="btn">Go to Channels</a>
+                          {% else %}
+                          <a href="/chat" class="btn">Go to Channels</a>
+                          {% endif %}
                         </div>
                       </div>
                     </div>
@@ -337,7 +345,11 @@
                         <!-- Other sections -->
                         <div class="button-container">
                           <p>If you're eager to dive deeper into AI development and connect with fellow learners and experienced developers, consider signing up and joining our community server. In our server, you can chat with experts, get answers to your questions, and share your progress. It's a fantastic opportunity to learn, collaborate, and grow in the world of AI development.</p>
-                          <a href="/login" class="btn">Go to Channels</a>
+                          {% if not request.session.email %}
+                          <a href="/auth/login/" class="btn">Go to Channels</a>
+                          {% else %}
+                          <a href="/chat" class="btn">Go to Channels</a>
+                          {% endif %}
                         </div>
                       </div>
                     </div>
@@ -370,8 +382,8 @@
     <div class="footerCoontainer">
         <div class="socialIcons">
           <a href="mailto:codeverse.sts@gmail.com"><i class="fas fa-envelope fa-12x"></i></a>
-          <a href="https://x.com/vaderamishty?t=iqiwWIrhjBxsNhM6KrROPA&s=09"><i class="fa-brands fa-x-twitter fa-12x"></i></a>
-            <a href="https://www.instagram.com/mishtyvadera06?igsh=MTVod2c2azN4eGl0Zg=="><i class="fa-brands fa-instagram fa-12x"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter fa-12x"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram fa-12x"></i></a>
             <a href="https://github.com/dpshah23/CodeVerse"><i class="fa-brands fa-github fa-12x"></i></a>
         </div>
 

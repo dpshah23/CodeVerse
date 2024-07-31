@@ -14,8 +14,6 @@ const addEventOnElem = function (elem, type, callback) {
   }
 }
 
-
-
 /**
  * navbar toggle
  */
@@ -129,7 +127,6 @@ function showToast(msg) {
         toast.remove();
     },5000);
 }
-
 
 // channels
 function openModal(modalId) {
