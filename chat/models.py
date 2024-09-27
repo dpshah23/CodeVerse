@@ -3,12 +3,15 @@ from django.db import models
 from auth1.models import *
 from datetime import datetime
 import django.utils.timezone
+import shortuuid
 
 # Create your models here.
 class Chatgroup(models.Model):
     group_id=models.CharField(max_length=150,default=None,null=True)
-    group_name = models.CharField(max_length= 100 , unique=True)
+    group_name = models.CharField(max_length= 100 , unique=True , default=shortuuid.uuid)
     users_online = models.ManyToManyField(Users_main , related_name='online_in_groups', blank=True)
+    is_private = models.BooleanField(default=False)
+    members = models.ManyToManyField(Users_main , related_name='chat_groups' , blank = True)
     
     
     def __str__(self):

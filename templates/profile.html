@@ -33,6 +33,9 @@
             <p><strong>Date of Birth:</strong> {{ user.dob }}</p>
             <p><strong>Description:</strong> {{ user.description }}</p>
         </div>
+        {%if profile.user != user %}
+        <a class = 'button' href= '{%url 'start-chat' profile.user.username%}' > Chat with me </a> 
+        {%endif %}
     </div>
 </body>
 </html>

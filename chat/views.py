@@ -4,11 +4,11 @@ from .models import *
 from .forms import ChatmessageCreateForm 
 from django.views.decorators.csrf import csrf_exempt
 from django.middleware.csrf import get_token
-
+from django.http import Http404
 
 
 # Create your views here.
-def dispall(request):
+def dispall(request ):
     if 'username' and 'email' not in request.session:
         messages.error(request,"Login Required")
         return redirect('/auth/login')
@@ -33,7 +33,7 @@ def dispall(request):
     
 
 @csrf_exempt
-def home_view(request , chatroom_name):
+def home_view(request , chatroom_name = 'public-chat'):
     if 'email' not in request.session:
         return redirect('/auth/login')
     
@@ -69,6 +69,16 @@ def home_view(request , chatroom_name):
 
     # print(chat_messages)
     form = ChatmessageCreateForm()
+    
+    other_user = None
+    if Chatgroup.is_private :
+        if request.session['username'] not in Chatgroup.members.all():
+            raise Http404()
+        for member in Chatgroup.members.all():
+            if member != request.session['username']:
+                other_user = member 
+                break
+        
     if request.method == 'POST' and request.htmx:
         form=ChatmessageCreateForm(request.POST)
         if form.is_valid():
@@ -86,11 +96,13 @@ def home_view(request , chatroom_name):
                 'image': joinedgrp
             }
             return render(request,'chat_message_p.html',context)
+        
     
 
     context = {
         'chat_messages' : chat_messages, 
         'form' : form,
+        'other_user': other_user,
         'chatroom_name' : chatroom_name,
         'chat_group' : chat_group,
         'csrf_token': get_token(request) if request.method == 'POST' else None,
@@ -113,3 +125,26 @@ def join(request,id):
 
     return redirect(f'/chat/{id}')
 
+def get_or_create_chatroom(request , username):
+    
+    username12=request.session['username']
+    if username12 == username :
+        return redirect ('home')
+
+    other_user = Users_main.objects.get(username= username)
+    my_chatrooms = request.username12.Chatgroup.filter(is_private= True)
+    
+    if my_chatroom.exists ():
+        for chatroom in my_chatroom :
+            if other_user in chatroom.members.all():
+                chatroom = chatroom
+                break
+            else:
+                chatroom = Chatgroup.objects.create(is_private = True)
+                chatroom.members.add(other_user , request.session['username'])
+                
+    else :
+        chatroom = Chatgroup.objects.create(is_private = True)
+        chatroom.members.add(other_user , request.session['username'])
+        
+    return redirect ('chatroom' , chatroom.group_name)
